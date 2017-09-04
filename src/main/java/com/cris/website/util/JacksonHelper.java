@@ -5,7 +5,9 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.util.List;
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.cris.website.exception.JsonConverterException;
 import com.fasterxml.jackson.core.JsonParser;
@@ -23,7 +25,7 @@ public class JacksonHelper
 {
 
 	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(JacksonHelper.class);
+	private final static Logger LOG = LoggerFactory.getLogger(JacksonHelper.class);
 
 	/** The to JSON mapper. */
 	private static ObjectMapper toJSONMapper = new ObjectMapper();

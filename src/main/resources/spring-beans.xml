@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-4.1.xsd">
 
+	<!-- 载入配置文件 -->
+	<util:properties id="constants" location="classpath:config.properties" />
+
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
+
+	<bean id="heFengWeatherClient" class="com.cris.website.client.HeFengWeatherClient">
+		<property name="restTemplate" ref="restTemplate" />
+	</bean>
+
+	<bean id="crisWSService" class="com.cris.website.service.impl.CrisWSServiceImpl">
+		<property name="heFengWeatherClient" ref="heFengWeatherClient" />
+	</bean>
+
+	<bean id="crisWSFacades" class="com.cris.website.facades.impl.CrisWSFacadesImpl">
+		<property name="crisWSService" ref="crisWSService" />
+	</bean>
 </beans>
