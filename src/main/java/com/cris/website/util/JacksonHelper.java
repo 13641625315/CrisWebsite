@@ -6,9 +6,6 @@ import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.cris.website.exception.JsonConverterException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -23,9 +20,6 @@ import com.fasterxml.jackson.databind.type.TypeFactory;
  */
 public class JacksonHelper
 {
-
-	/** The Constant LOG. */
-	private final static Logger LOG = LoggerFactory.getLogger(JacksonHelper.class);
 
 	/** The to JSON mapper. */
 	private static ObjectMapper toJSONMapper = new ObjectMapper();
@@ -60,7 +54,7 @@ public class JacksonHelper
 		}
 		catch (final Exception e)
 		{
-			LOG.error("generate jsonData error " + obj, e);
+//			LOG.error("generate jsonData error " + obj, e);
 			throw new JsonConverterException(e);
 		}
 

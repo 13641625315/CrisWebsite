@@ -11,6 +11,8 @@
 
 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
 
+	<bean id="soapTemplate" class="org.springframework.ws.client.core.WebServiceTemplate" />
+
 	<bean id="heFengWeatherClient" class="com.cris.website.client.HeFengWeatherClient">
 		<property name="restTemplate" ref="restTemplate" />
 	</bean>

@@ -1,0 +1,27 @@
+.header {
+	background-color: white;
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	border-bottom: 1px solid #ebebeb;
+}
+
+.headerWeather {
+	height: 32px;
+	text-align: center;
+	overflow: hidden;
+	vertical-align: middle;
+	float: left;
+}
+
+.headerWeatherDetail {
+	margin: 0 0 0 35px;
+	padding: 0;
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+	height: 32px;
+}
+
+.headerWeatherDetailCity {
+	height: 20px;
+}

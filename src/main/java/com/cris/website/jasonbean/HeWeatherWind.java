@@ -14,7 +14,7 @@ public class HeWeatherWind {
 
     private String deg;
     private String dir;
-    private Date sc;
+    private String sc;
     private String spd;
     public void setDeg(String deg) {
          this.deg = deg;
@@ -30,10 +30,10 @@ public class HeWeatherWind {
          return dir;
      }
 
-    public void setSc(Date sc) {
+    public void setSc(String sc) {
          this.sc = sc;
      }
-     public Date getSc() {
+     public String getSc() {
          return sc;
      }
 

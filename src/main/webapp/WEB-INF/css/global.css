@@ -1,5 +1,25 @@
-#homeheader {
-    background-color:black;
-    color:white;
-    padding:5px;
+body {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+
+a:visited {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover {
+	font-size: 12px;
+	color: #999999;
+	text-decoration: underline;
 }

@@ -9,7 +9,7 @@ public class CrisWSServiceImpl implements CrisWSService {
 	
 	@Override
 	public HeWeather getWeatherForIP(String ip) {
-		return null;
+		return heFengWeatherClient.getWeatherForIP(ip);
 	}
 
 	public HeFengWeatherClient getHeFengWeatherClient() {

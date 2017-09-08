@@ -11,8 +11,6 @@ import java.util.Map;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpResponse;
 
@@ -20,7 +18,6 @@ import org.springframework.http.client.ClientHttpResponse;
 
 public class HttpHelper
 {
-	private final static Logger LOG = LoggerFactory.getLogger(HttpHelper.class);
 
 	/**
 	 * get the charset from content-type. if not found,return default UTF-8
@@ -83,10 +80,10 @@ public class HttpHelper
 		{
 			params = params.deleteCharAt(params.length() - 1);
 		}
-		if (LOG.isDebugEnabled())
-		{
-			LOG.debug("Rest request params:[{}]", params.toString());
-		}
+//		if (LOG.isDebugEnabled())
+//		{
+//			LOG.debug("Rest request params:[{}]", params.toString());
+//		}
 		return params.toString();
 	}
 
@@ -117,7 +114,7 @@ public class HttpHelper
 		}
 		catch (final IOException e)
 		{
-			LOG.error(e.getMessage());
+//			LOG.error(e.getMessage());
 		}
 		return sb.toString();
 	}
@@ -145,7 +142,7 @@ public class HttpHelper
 		}
 		catch (final IOException e1)
 		{
-			LOG.error("read http response error 1:", e1);
+//			LOG.error("read http response error 1:", e1);
 		}
 		response.getHeaders().forEach((entry, vlist) -> {
 			sb.append(entry).append(" : ");
@@ -161,7 +158,7 @@ public class HttpHelper
 		}
 		catch (final IOException e2)
 		{
-			LOG.error("read http response error 2:", e2);
+//			LOG.error("read http response error 2:", e2);
 		}
 		return sb.toString();
 	}

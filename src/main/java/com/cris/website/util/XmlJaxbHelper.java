@@ -19,16 +19,11 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
 /**
  *
  */
 public class XmlJaxbHelper<T>
 {
-	private static final Logger LOG = LoggerFactory.getLogger(XmlJaxbHelper.class);
 
 	//	public static <T> String marshal2(final T t) throws JAXBException
 	//	{
@@ -62,7 +57,7 @@ public class XmlJaxbHelper<T>
 		}
 		catch (final IOException e)
 		{
-			LOG.error(e.getMessage());
+//			LOG.error(e.getMessage());
 		}
 		return resp;
 	}
