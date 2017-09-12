@@ -1,6 +1,44 @@
-.homeBody {
-	margin: 0 auto;
-	width: 70%;
-	font-size: 12px;
-	font-family: Microsoft YaHei;
+.wrap-body {
+	
+}
+
+/* ---------------------------------------------------------------------------- */
+/* ----------------------------------Carousel---------------------------------- */
+/* ---------------------------------------------------------------------------- */
+.owl {
+	text-align: center;
+	background: #fff;
+}
+
+.owl-controls .owl-buttons div {
+	position: absolute;
+	color: #777;
+	opacity: 0.7;
+}
+
+.owl-carousel:hover .owl-buttons div {
+	color: #fff;
+}
+
+.owl-controls .owl-buttons .owl-prev {
+	left: 10px;
+	top: 50%;
+}
+
+.owl-controls .owl-buttons .owl-next {
+	right: 10px;
+	top: 50%;
+}
+
+.owl-carousel {
+	margin-bottom: 20px;
+}
+
+.owl-carousel .owl-buttons div i {
+	font-size: 40px;
+	margin: -20px 0 0;
+}
+
+.owl-carousel .item {
+	position: relative;
 }
