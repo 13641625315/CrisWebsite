@@ -1,0 +1,38 @@
+footer {
+	text-align: center;
+	padding: 40px 0;
+	border-top: 1px solid #bbb;
+}
+
+footer a {
+	color: #444;
+	font-weight: bold;
+}
+
+footer a:hover {
+	color: #000;
+}
+
+footer .wrap-footer {
+	color: #92907C;
+}
+
+footer .wrap-footer ul li {
+	margin-bottom: 5px;
+	border-bottom: 1px solid #555;
+	padding: 10px 0 15px;
+}
+
+footer i.fa {
+	font-size: 22px;
+	margin-right: 8px;
+}
+
+footer .bottom-social {
+	margin-bottom: 20px;
+}
+
+footer .bottom-social i.fa {
+	font-size: 24px;
+	margin-right: 12px;
+}

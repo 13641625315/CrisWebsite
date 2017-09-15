@@ -2,24 +2,29 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="header" tagdir="/WEB-INF/tags/"%>
+<%@ taglib prefix="footer" tagdir="/WEB-INF/tags/"%>
 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="js/jquery.min.js"></script>
+
 <script type="text/javascript" src="addon/owl-carousel/owl.carousel.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/global.css" />
 <link rel="stylesheet" type="text/css" href="css/header.css" />
-<link rel="stylesheet" type="text/css" href="css/menu.css" />
-<link rel="stylesheet" type="text/css" href="css/indexPage.css" />
+<link rel="stylesheet" type="text/css" href="css/zerogrid.css">
+<link rel="stylesheet" type="text/css" href="css/footer.css">
+
 <link rel="stylesheet" type="text/css"
 	href="addon/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css"
 	href="addon/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="css/menu.css" />
+<link rel="stylesheet" type="text/css" href="css/indexPage.css" />
 
-<title>Cris WebSite</title>
+<title>克里斯咨询站-首页</title>
 </head>
 <body>
 	<header:header />
@@ -27,12 +32,7 @@
 		<div id="cssmenu">
 			<ul>
 				<li class="active"><a href="#"><span>首页</span></a></li>
-				<li><a href="#"><span>内容1</span></a></li>
-				<li><a href="#"><span>内容2</span></a></li>
-				<li><a href="#"><span>内容3</span></a></li>
-				<li><a href="#"><span>内容4</span></a></li>
-				<li><a href="#"><span>内容5</span></a></li>
-				<li><a href="#"><span>内容6</span></a></li>
+				<li><a href="#"><span>天涯明月刀</span></a></li>
 			</ul>
 		</div>
 		<div class="owl">
@@ -49,5 +49,6 @@
 			</div>
 		</div>
 	</div>
+	<footer:footer />
 </body>
 </html>
