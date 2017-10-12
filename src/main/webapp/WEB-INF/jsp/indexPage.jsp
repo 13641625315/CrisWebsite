@@ -31,7 +31,7 @@
 	<div>
 		<div id="cssmenu">
 			<ul>
-				<li class="active"><a href="#"><span>首页</span></a></li>
+				<li><a href="#"><span>首页</span></a></li>
 				<li><a href="#"><span>天涯明月刀</span></a></li>
 			</ul>
 		</div>
