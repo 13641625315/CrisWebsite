@@ -3,31 +3,35 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
-	
-	<!-- 设置displayname-->
+
+	<!-- 设置displayname -->
 	<display-name>CrisWebsite</display-name>
-	
-	<!-- 设置spring配置路径-->
+
+	<!-- 设置spring配置路径 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/spring-*.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:/log4j.properties</param-value>
 	</context-param>
 	
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
-	<!-- 设置首页路径-->
+
+	<!-- 设置首页路径 -->
 	<welcome-file-list>
 		<welcome-file>index</welcome-file>
 	</welcome-file-list>
-	
-	<!-- 设置session失效时间-->
+
+	<!-- 设置session失效时间 -->
 	<session-config>
 		<session-timeout>15</session-timeout>
 	</session-config>
-	
-	<!-- 设置servlet相关-->
+
+	<!-- 设置servlet相关 -->
 	<servlet>
 		<servlet-name>criswebsite</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

@@ -1,23 +1,30 @@
 package com.cris.website.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "user")
 public class User {
-	private Integer uid;
-	private Integer phoneNum;
+	@Id
+	private String uid;
+	private String phoneNum;
 	private String password;
 
-	public Integer getUid() {
+	public String getUid() {
 		return uid;
 	}
 
-	public void setUid(Integer uid) {
+	public void setUid(String uid) {
 		this.uid = uid;
 	}
 
-	public Integer getPhoneNum() {
+	public String getPhoneNum() {
 		return phoneNum;
 	}
 
-	public void setPhoneNum(Integer phoneNum) {
+	public void setPhoneNum(String phoneNum) {
 		this.phoneNum = phoneNum;
 	}
 
