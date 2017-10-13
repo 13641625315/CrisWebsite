@@ -22,6 +22,7 @@ public class PageController {
 	@RequestMapping(value="index")
     public ModelAndView indexPage(HttpServletRequest request,HttpServletResponse response,Model model){
 		HeWeather heWeather=crisWSFacades.getWeatherForIP(CusAccessObjectUtil.getIpAddress(request));
+		model.addAttribute("pageTitle", "首页");
 		model.addAttribute("heWeather", heWeather);
         return new ModelAndView("indexPage");
     }

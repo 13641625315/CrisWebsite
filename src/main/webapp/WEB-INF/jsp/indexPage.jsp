@@ -9,39 +9,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="js/jquery.min.js"></script>
 
-<script type="text/javascript" src="addon/owl-carousel/owl.carousel.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-
 <link rel="stylesheet" type="text/css" href="css/global.css" />
 <link rel="stylesheet" type="text/css" href="css/header.css" />
-<link rel="stylesheet" type="text/css" href="css/zerogrid.css">
 <link rel="stylesheet" type="text/css" href="css/footer.css">
-
-<link rel="stylesheet" type="text/css"
-	href="addon/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css"
-	href="addon/owl-carousel/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="css/indexPage.css" />
 
-<title>克里斯咨询站-首页</title>
+<title>克里斯资讯站-${pageTitle}</title>
 </head>
 <body>
 	<header:header />
-	<div class="content">
-		<div class="owl">
-			<div id="owl-slide" class="owl-carousel">
-				<div class="item">
-					<img src="image/indexSlider/slider1.jpg" width="100%" />
-				</div>
-				<div class="item">
-					<img src="image/indexSlider/slider2.jpg" width="100%" />
-				</div>
-				<div class="item">
-					<img src="image/indexSlider/slider3.jpg" width="100%" />
-				</div>
-			</div>
-		</div>
-	</div>
+	<div class="content"></div>
 	<footer:footer />
 </body>
 </html>

@@ -1,15 +1,25 @@
 .headerTop {
-	background-color: white;
+	background-color: #444;
 	width: 100%;
-	height: 35px;
-	line-height: 35px;
-	border-bottom: 0px solid #ebebeb;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
 	font-size: 14px;
-	font-family: Microsoft YaHei;
+	font-style: normal;
+	font-weight: 100;
+	font-family: "Georgia", sans-serif;
+}
+
+.headerTop a {
+	color: #fff;
+}
+
+.headerTop a:hover {
+	color: #9d9c9c;
 }
 
 .headerWeather {
-	height: 35px;
+	height: 40px;
 	text-align: center;
 	overflow: hidden;
 	vertical-align: middle;
@@ -19,11 +29,11 @@
 .headerWeatherDetail {
 	margin: 0 0 0 20px;
 	padding: 0;
-	height: 35px;
+	height: 40px;
 }
 
 .headerAccount {
-	height: 35px;
+	height: 40px;
 	text-align: center;
 	overflow: hidden;
 	vertical-align: middle;
@@ -33,5 +43,42 @@
 .headerAccountDetail {
 	margin: 0 20px 0 0;
 	padding: 0;
-	height: 35px;
+	height: 40px;
+}
+
+.headerNav {
+	background-color: #333;
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	color: #fff;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 100;
+	font-family: "Georgia", sans-serif;
+}
+
+.headerNav ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	width: auto;
+	text-align: center;
+}
+
+.headerNav ul li {
+	display: inline;
+}
+
+.headerNav ul li a {
+	color: #fff;
+	display:  inline-block;
+	line-height: 45px;
+	padding: 0 30px;
+	text-decoration: none;
+}
+
+.headerNav ul li a:hover {
+	color: #9d9c9c;
+	text-decoration: none;
 }

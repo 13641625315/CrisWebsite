@@ -15,11 +15,11 @@ footer a:hover {
 	color: #000;
 }
 
-footer .wrap-footer {
+footer .footer {
 	color: #92907C;
 }
 
-footer .wrap-footer ul li {
+footer .footer ul li {
 	margin-bottom: 5px;
 	border-bottom: 1px solid #555;
 	padding: 10px 0 15px;
@@ -30,7 +30,7 @@ footer i.fa {
 	margin-right: 8px;
 }
 
-footer .bottom-social {
+footer{
 	margin-bottom: 20px;
 }
 
