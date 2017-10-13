@@ -21,20 +21,13 @@
 	href="addon/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css"
 	href="addon/owl-carousel/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="css/menu.css" />
 <link rel="stylesheet" type="text/css" href="css/indexPage.css" />
 
 <title>克里斯咨询站-首页</title>
 </head>
 <body>
 	<header:header />
-	<div>
-		<div id="cssmenu">
-			<ul>
-				<li><a href="#"><span>首页</span></a></li>
-				<li><a href="#"><span>天涯明月刀</span></a></li>
-			</ul>
-		</div>
+	<div class="content">
 		<div class="owl">
 			<div id="owl-slide" class="owl-carousel">
 				<div class="item">

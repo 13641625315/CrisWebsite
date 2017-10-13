@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	padding: 0;
 }
 
 a {
@@ -19,4 +20,9 @@ a:visited {
 a:hover {
 	color: #999999;
 	text-decoration: underline;
+}
+
+.content {
+	height: 100%;
+	background: #373735;
 }

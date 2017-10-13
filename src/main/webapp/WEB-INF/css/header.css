@@ -1,9 +1,9 @@
-.header {
+.headerTop {
 	background-color: white;
 	width: 100%;
 	height: 35px;
 	line-height: 35px;
-	border-bottom: 1px solid #ebebeb;
+	border-bottom: 0px solid #ebebeb;
 	font-size: 14px;
 	font-family: Microsoft YaHei;
 }
@@ -17,7 +17,7 @@
 }
 
 .headerWeatherDetail {
-	margin: 0 0 0 15px;
+	margin: 0 0 0 20px;
 	padding: 0;
 	height: 35px;
 }
@@ -31,7 +31,7 @@
 }
 
 .headerAccountDetail {
-	margin: 0 15 0 0;
+	margin: 0 20px 0 0;
 	padding: 0;
 	height: 35px;
 }

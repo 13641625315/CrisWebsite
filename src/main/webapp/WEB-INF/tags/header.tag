@@ -1,6 +1,8 @@
 <%@  tag pageEncoding="UTF-8"%>
 
-<div class="header">
+<link rel="stylesheet" type="text/css" href="css/menu.css" />
+
+<div class="headerTop">
 	<div class="headerWeather">
 		<p class="headerWeatherDetail">
 			${heWeather.heWeather5[0].basic.city}&nbsp;&nbsp;<img
@@ -15,3 +17,10 @@
 		</p>
 	</div>
 </div>
+<div id="cssmenu">
+	<ul>
+		<li><a href="#"><span>首页</span></a></li>
+		<li><a href="#"><span>天涯明月刀</span></a></li>
+	</ul>
+</div>
+
