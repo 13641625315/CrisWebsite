@@ -2,7 +2,6 @@
   * Copyright 2017 bejson.com 
   */
 package com.cris.website.jasonbean;
-import java.util.Date;
 
 /**
  * Auto-generated: 2017-09-04 15:28:1
