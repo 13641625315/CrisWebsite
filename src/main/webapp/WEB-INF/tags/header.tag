@@ -2,22 +2,25 @@
 
 <div class="headerTop">
 	<div class="headerWeather">
-		<p class="headerWeatherDetail">
-			${heWeather.heWeather5[0].basic.city}&nbsp;&nbsp;<img
-				src="image/weather/${heWeather.heWeather5[0].now.cond.code}.png"
-				alt="${heWeather.heWeather5[0].now.cond.txt}" width="20px"
-				height="17px" style="vertical-align: middle">${heWeather.heWeather5[0].now.cond.txt}&nbsp;&nbsp;&nbsp;${heWeather.heWeather5[0].now.tmp}℃&nbsp;&nbsp;
-		</p>
+		<div class="headerWeatherDetail">
+			<div class="headerWeatherDetailText">${heWeather.heWeather5[0].basic.city}&nbsp;&nbsp;</div>
+			<img
+				src="image/hfweather/${heWeather.heWeather5[0].now.cond.code}.png"
+				alt="${heWeather.heWeather5[0].now.cond.txt}"
+				class="headerWeatherDetailImage"><div
+				class="headerWeatherDetailText">${heWeather.heWeather5[0].now.cond.txt}&nbsp;&nbsp;&nbsp;${heWeather.heWeather5[0].now.tmp}℃&nbsp;&nbsp;</div>
+		</div>
 	</div>
 	<div class="headerAccount">
-		<p class="headerAccountDetail">
-			<span class="headerAccountDetailLogin"><a href="#">登录</a></span>
-		</p>
+		<div class="headerAccountDetail">
+			<span class="headerAccountDetailLink"><a href="#">注册</a></span>
+			<span class="headerAccountDetailLink"><a href="#">登录</a></span>
+			<span class="headerAccountDetailLink"><a href="#">充值</a></span>
+		</div>
 	</div>
 </div>
 <div class="headerNav">
 	<ul>
 		<li><a href="#"><span>首页</span></a></li>
-		<li><a href="#"><span>天涯明月刀</span></a></li>
 	</ul>
 </div>

@@ -218,7 +218,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>cris.app</finalName>
+		<finalName>criswebsite</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
