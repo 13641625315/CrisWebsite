@@ -14,11 +14,11 @@
 <link rel="stylesheet" type="text/css" href="css/footer.css">
 <link rel="stylesheet" type="text/css" href="css/indexPage.css" />
 
-<title>克里斯资讯站-${pageTitle}</title>
+<title>${pageTitle}</title>
 </head>
 <body>
 	<header:header />
-	<div class="content"></div>
+	<div class="indexContent"></div>
 	<footer:footer />
 </body>
 </html>

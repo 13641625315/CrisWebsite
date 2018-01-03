@@ -1,6 +1,9 @@
+.topBackground {
+	background-color: #000;
+}
+
 .headerTop {
 	background-color: #000;
-	width: 100%;
 	height: 40px;
 	color: #fff;
 	font-size: 12px;
@@ -62,39 +65,23 @@
 	line-height: 40px;
 }
 
-.headerNav {
-	background-color: #333;
-	width: 100%;
-	height: 45px;
-	line-height: 45px;
-	color: #fff;
-	font-size: 13px;
-	font-style: normal;
-	font-weight: 100;
-	font-family: "Georgia", sans-serif;
+.navHeaderCris {
+	min-height: 40px;
+	background-color: #000;
+	border: 0px;
+	margin-bottom: 10px;
 }
 
-.headerNav ul {
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-	width: auto;
+.navTopLiCris {
 	text-align: center;
+	width: 15%;
 }
 
-.headerNav ul li {
-	display: inline;
-}
-
-.headerNav ul li a {
+.navTopACris {
 	color: #fff;
-	display: inline-block;
-	line-height: 45px;
-	padding: 0 30px;
-	text-decoration: none;
 }
 
-.headerNav ul li a:hover {
-	color: #9d9c9c;
-	text-decoration: none;
+.navTopACris:hover {
+	background-color: #000;
+	color:#fff;
 }

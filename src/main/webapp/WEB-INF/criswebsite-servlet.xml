@@ -19,6 +19,7 @@
 	<mvc:resources mapping="/image/**" location="/WEB-INF/image/" />
 	<mvc:resources mapping="/gif/**" location="/WEB-INF/gif/" />
 	<mvc:resources mapping="/addon/**" location="/WEB-INF/addon/" />
+	<mvc:resources mapping="/bootstrap/**" location="/WEB-INF/bootstrap/" />
 	
 	<!-- 配置视图解析器，可以显式设置，也可以不设置，不设置会依据SpringMVC的默认设置 -->
 	<bean id="viewResolver"
