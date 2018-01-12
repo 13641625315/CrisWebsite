@@ -11,6 +11,7 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+<link rel="icon" type="img/x-ico" href="image/icon/favicon_32x32.ico"/>
 <link rel="stylesheet" type="text/css"
 	href="bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/global.css" />

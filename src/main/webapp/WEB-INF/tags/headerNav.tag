@@ -2,14 +2,28 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="header" tagdir="/WEB-INF/tags/"%>
 
-<div class="container">
-	<nav class="navbar navbar-default navHeaderCris" role="navigation">
-		<ul class="nav nav-pills">
-			<li role="presentation" class="active navTopLiCris"><a class="navTopACris" href="#">首页</a></li>
-			<li role="presentation" class="navTopLiCris"><a class="navTopACris" href="#">游戏</a></li>
-			<li role="presentation" class="navTopLiCris"><a class="navTopACris" href="#">明星</a></li>
-			<li role="presentation" class="navTopLiCris"><a class="navTopACris" href="#">汽车</a></li>
-			<li role="presentation" class="navTopLiCris"><a class="navTopACris" href="#">商城</a></li>
-		</ul>
-	</nav>
+<div class="headerNav">
+	<div class="container containerHeaderNavCris">
+		<nav class="navbar navbar-default navbarCris" role="navigation">
+			<div class="navTopLogoDivCris">
+				<a href="#"><img src="image/icon/logo_origin.png" width="35%"
+					height="100%" /></a>
+			</div>
+			<ul class="nav nav-pills navTopLogoUlCris">
+				<!-- Li因为float:right所以需要倒序写入,同时可能需要根据个数修改navLiCris的% -->
+				<li role="presentation" class="navLiCris"><a class="navACris"
+					href="#">关于</a></li>
+				<li role="presentation" class="navLiCris"><a class="navACris"
+					href="#">论坛</a></li>
+				<li role="presentation" class="navLiCris"><a class="navACris"
+					href="#">商城</a></li>
+				<li role="presentation" class="navLiCris"><a class="navACris"
+					href="#">明星</a></li>
+				<li role="presentation" class="navLiCris"><a class="navACris"
+					href="#">汽车</a></li>
+				<li role="presentation" class="navLiCris"><a class="navACris"
+					href="#">游戏</a></li>
+			</ul>
+		</nav>
+	</div>
 </div>

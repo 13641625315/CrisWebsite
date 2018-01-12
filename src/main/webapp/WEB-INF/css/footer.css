@@ -1,40 +1,10 @@
-footer {
-	background: #373732;
-	text-align: center;
-	padding: 40px 0;
-	border-top: 0px solid #bbb;
-	height: 30px;
-}
-
-footer a {
-	color: #444;
-	font-weight: bold;
-}
-
-footer a:hover {
-	color: #000;
-}
-
-footer .footer {
-	color: #92907C;
-}
-
-footer .footer ul li {
+.copyright{
+	background-color: #fff;
+	border: 0px;
 	margin-bottom: 5px;
-	border-bottom: 1px solid #555;
-	padding: 10px 0 15px;
-}
-
-footer i.fa {
-	font-size: 22px;
-	margin-right: 8px;
-}
-
-footer{
-	margin-bottom: 20px;
-}
-
-footer .bottom-social i.fa {
-	font-size: 24px;
-	margin-right: 12px;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 100;
+	font-family: "WenQuanYi Micro Hei", sans-serif;
+	text-align: center;
 }

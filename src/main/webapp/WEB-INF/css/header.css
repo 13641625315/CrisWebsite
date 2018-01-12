@@ -1,23 +1,35 @@
 .topBackground {
-	background-color: #000;
+	background-color: #fff;
 }
 
 .headerTop {
-	background-color: #000;
+	background-color: #428bca;
 	height: 40px;
 	color: #fff;
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 100;
-	font-family: "Georgia", sans-serif;
+	font-family: "WenQuanYi Micro Hei", sans-serif;
+}
+
+.containerCrisTop {
+	background-color: #428bca;
 }
 
 .headerTop a {
 	color: #fff;
 }
 
+.headerTop a:link {
+	color: #fff;
+}
+
+.headerTop a:visited {
+	color: #fff;
+}
+
 .headerTop a:hover {
-	color: #9d9c9c;
+	color: #000;
 }
 
 .headerWeather {
@@ -42,7 +54,7 @@
 
 .headerWeatherDetailImage {
 	width: 18px;
-	height: 15px;
+	height: 17px;
 	margin: auto;
 }
 
@@ -65,23 +77,55 @@
 	line-height: 40px;
 }
 
-.navHeaderCris {
+.headerNav {
+	height: 80px;
+}
+
+.containerHeaderNavCris{
+	padding: 20px 0 20px 0;
+}
+
+.navbarCris {
 	min-height: 40px;
-	background-color: #000;
+	background-color: #fff;
 	border: 0px;
-	margin-bottom: 10px;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	font-family: "WenQuanYi Micro Hei", sans-serif;
+	margin: auto;
 }
 
-.navTopLiCris {
+.navTopLogoDivCris {
+	width: 40%;
+	height:38px;
+	vertical-align: middle;
 	text-align: center;
-	width: 15%;
+	float: left;
 }
 
-.navTopACris {
+.navTopLogoUlCris {
+	width: 60%;
+	float: left;
+}
+
+.navTopLogoUlCris>.navLiCris {
+	width: 15%;
+	margin-left: 0px;
+	float: right;
+}
+
+.navLiCris {
+	color: #000;
+	text-align: center;
+}
+
+.navLiCris>.navACris:hover {
+	background-color: #428bca;
 	color: #fff;
 }
 
-.navTopACris:hover {
-	background-color: #000;
-	color:#fff;
+.navLiCris>.navACris {
+	border-radius: 0px;
+	-webkit-transition: 0.5s;
 }

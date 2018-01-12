@@ -2,8 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="header" tagdir="/WEB-INF/tags/"%>
 
-<div class="container">
-	<div class="headerTop">
+<div class="headerTop">
+	<div class="container">
 		<div class="headerWeather">
 			<div class="headerWeatherDetail">
 				<div class="headerWeatherDetailText">${heWeather.heWeather5[0].basic.city}&nbsp;&nbsp;</div>

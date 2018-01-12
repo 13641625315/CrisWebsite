@@ -20,5 +20,4 @@ public class CrisWSFacadesImpl implements CrisWSFacades {
 		this.crisWSService = crisWSService;
 	}
 
-	
 }

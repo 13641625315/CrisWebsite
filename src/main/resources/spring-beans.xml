@@ -7,14 +7,16 @@
            http://www.springframework.org/schema/util/spring-util-4.1.xsd">
 
 	<!-- 载入配置文件 -->
-	<util:properties id="constants" location="classpath:config.properties" />
-
+	<util:properties id="configs" location="classpath:config-local.properties" />
+	<!-- <util:properties id="configs" location="classpath:config-dev.properties" /> -->
+	
 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
 
 	<bean id="soapTemplate" class="org.springframework.ws.client.core.WebServiceTemplate" />
 
 	<bean id="heFengWeatherClient" class="com.cris.website.client.HeFengWeatherClient">
 		<property name="restTemplate" ref="restTemplate" />
+		<property name="configurationUtil" ref="configurationUtil" />
 	</bean>
 
 	<bean id="crisWSService" class="com.cris.website.service.impl.CrisWSServiceImpl">
