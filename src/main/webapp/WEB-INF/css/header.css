@@ -9,7 +9,7 @@
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 100;
-	font-family: "WenQuanYi Micro Hei", sans-serif;
+	font-family: WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
 }
 
 .containerCrisTop {
@@ -81,7 +81,7 @@
 	height: 80px;
 }
 
-.containerHeaderNavCris{
+.containerHeaderNavCris {
 	padding: 20px 0 20px 0;
 }
 
@@ -92,13 +92,13 @@
 	font-size: 15px;
 	font-style: normal;
 	font-weight: 500;
-	font-family: "WenQuanYi Micro Hei", sans-serif;
+	font-family: WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
 	margin: auto;
 }
 
 .navTopLogoDivCris {
 	width: 40%;
-	height:38px;
+	height: 38px;
 	vertical-align: middle;
 	text-align: center;
 	float: left;

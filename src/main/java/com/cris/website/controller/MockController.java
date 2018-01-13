@@ -9,21 +9,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cris.website.exception.JsonConverterException;
 import com.cris.website.facades.CrisWSFacades;
 import com.cris.website.jasonbean.HeWeather;
 import com.cris.website.util.CusAccessObjectUtil;
 
 @Controller
-public class PageController {
-	
+public class MockController {
+
 	@Resource
 	CrisWSFacades crisWSFacades;
-	
-	@RequestMapping(value="index")
-    public ModelAndView indexPage(HttpServletRequest request,HttpServletResponse response,Model model){
-		HeWeather heWeather = crisWSFacades.getWeatherForIP(CusAccessObjectUtil.getPublicIP());
-		model.addAttribute("pageTitle", "首页");
-		model.addAttribute("heWeather", heWeather);
-        return new ModelAndView("indexPage");
-    }
+
+	@RequestMapping(value = "mock")
+	public String indexPage(HttpServletRequest request, HttpServletResponse response, Model model)
+			throws JsonConverterException {
+		return null;
+	}
+
 }

@@ -1,10 +1,13 @@
+.footer{
+	height:100px;
+	background-color: #428bca;
+}
+
 .copyright{
-	background-color: #fff;
-	border: 0px;
-	margin-bottom: 5px;
+	height:20px;
 	font-size: 13px;
 	font-style: normal;
 	font-weight: 100;
-	font-family: "WenQuanYi Micro Hei", sans-serif;
+	font-family: WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
 	text-align: center;
 }
