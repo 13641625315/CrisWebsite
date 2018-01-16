@@ -1,13 +1,16 @@
-.footer{
-	height:100px;
+.footer {
+	height: 200px;
 	background-color: #428bca;
 }
 
-.copyright{
-	height:20px;
-	font-size: 13px;
+.copyright {
+	width: 100%;
+	height: 20px;
+	color: #fff;
+	padding:90px 0 90px 0;
 	font-style: normal;
 	font-weight: 100;
 	font-family: WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
 	text-align: center;
+	font-size: 13px;
 }
