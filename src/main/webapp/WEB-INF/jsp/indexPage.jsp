@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="header" tagdir="/WEB-INF/tags/"%>
 <%@ taglib prefix="footer" tagdir="/WEB-INF/tags/"%>
+<%@ taglib prefix="slider" tagdir="/WEB-INF/tags/"%>
 
 <html>
 <head>
@@ -23,6 +24,7 @@
 </head>
 <body>
 	<header:header />
+	<slider:slider />
 	<div class="indexContent"></div>
 	<footer:footer />
 </body>
