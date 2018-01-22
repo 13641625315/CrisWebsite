@@ -1,3 +1,15 @@
-.indexContent {
-	height: 200%;
+.indexSubscribeContent {
+	padding: 50px 0 50px 0;
+	height: 225px;
+}
+
+.indexSubscribeContent>.container>h2 {
+	color: #428bca;
+	font-family: WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
+	text-align: center;
+}
+
+.indexSubscribeContent>.container>form {
+	display: table;
+	margin: 0 auto 0 auto;
 }
