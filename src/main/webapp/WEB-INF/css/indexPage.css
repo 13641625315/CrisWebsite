@@ -13,3 +13,33 @@
 	display: table;
 	margin: 0 auto 0 auto;
 }
+
+#indexSubscribeContentEmail {
+	width: 250px;
+	height: 40px;
+	text-align: left;
+	font-family: WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
+	color: #428bca;
+	background: none;
+	padding: 0 0 0 10px;
+	border: 1px solid #428bca;
+	-webkit-border-radius: 5px;
+	margin: 0 25px 0 0;
+	padding: 0 0 0 10px;
+}
+
+#indexSubscribeContentSubmit {
+	width: 120px;
+	height: 40px;
+	font-family: WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
+	color: #428bca;
+	background: none;
+	text-align: center;
+	border: 1px solid #428bca;
+	-webkit-border-radius: 5px;
+}
+
+#indexSubscribeContentSubmit:hover {
+	background: #428bca;
+	color: #fff;
+}

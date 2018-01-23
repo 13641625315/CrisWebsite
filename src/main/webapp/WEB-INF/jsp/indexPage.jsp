@@ -28,11 +28,12 @@
 	<slider:slider />
 	<div class="indexSubscribeContent">
 		<div class="container">
-			<h2>Subscribe to our newsletter</h2>
+			<h2>订阅最新最酷的资讯</h2>
 			<br clear="all">
 			<form method="post">
-				<input type="email" placeholder="请输入你的Email"> <input
-					type="submit" value="订阅">
+				<input id="indexSubscribeContentEmail" type="email"
+					placeholder="请输入你的Email"> <input
+					id="indexSubscribeContentSubmit" type="submit" value="订阅">
 			</form>
 		</div>
 	</div>
