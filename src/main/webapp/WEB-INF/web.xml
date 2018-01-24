@@ -26,8 +26,12 @@
 		<servlet-name>criswebsite</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
+
 	<!-- 设置spring配置路径 -->
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>CrisWebsiteRootKey</param-value>
+	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/spring-*.xml</param-value>
@@ -37,6 +41,10 @@
 		<param-value>classpath:/log4j.properties</param-value>
 	</context-param>
 
+
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
