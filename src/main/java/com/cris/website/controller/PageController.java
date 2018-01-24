@@ -15,15 +15,24 @@ import com.cris.website.util.CusAccessObjectUtil;
 
 @Controller
 public class PageController {
-	
+	private static String PAGE_TITLE_PREFIX = "CRIS" + " " + "|" + " ";
+
 	@Resource
 	CrisWSFacades crisWSFacades;
-	
-	@RequestMapping(value="index")
-    public ModelAndView indexPage(HttpServletRequest request,HttpServletResponse response,Model model){
+
+	@RequestMapping(value = "indexPage")
+	public ModelAndView indexPage(HttpServletRequest request, HttpServletResponse response, Model model) {
 		HeWeather heWeather = crisWSFacades.getWeatherForIP(CusAccessObjectUtil.getPublicIP());
-		model.addAttribute("pageTitle", "首页");
+		model.addAttribute("pageTitle", PAGE_TITLE_PREFIX + "首页");
+		model.addAttribute("pageID", "indexPage");
 		model.addAttribute("heWeather", heWeather);
-        return new ModelAndView("indexPage");
-    }
+		return new ModelAndView("indexPage");
+	}
+
+	@RequestMapping(value = "loginPage")
+	public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Model model) {
+		model.addAttribute("pageTitle", PAGE_TITLE_PREFIX + "登入注册");
+		model.addAttribute("pageID", "loginPage");
+		return new ModelAndView("loginPage");
+	}
 }

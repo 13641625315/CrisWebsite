@@ -16,8 +16,9 @@
 		</div>
 		<div class="headerAccount">
 			<div class="headerAccountDetail">
-				<span class="headerAccountDetailLink"><a href="#">注册</a></span> <span
-					class="headerAccountDetailLink"><a href="#">登录</a></span> <span
+				<!-- <span class="headerAccountDetailLink"><a href="#">注册</a></span> -->
+				<span
+					class="headerAccountDetailLink"><a href="loginPage">登录</a></span> <span
 					class="headerAccountDetailLink"><a href="#">充值</a></span>
 			</div>
 		</div>

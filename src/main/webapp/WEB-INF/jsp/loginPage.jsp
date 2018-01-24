@@ -1,19 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="header" tagdir="/WEB-INF/tags/header"%>
+<%@ taglib prefix="footer" tagdir="/WEB-INF/tags/footer"%>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+<link rel="icon" type="img/x-ico" href="image/icon/favicon_32x32.ico" />
+<link rel="stylesheet" type="text/css"
+	href="bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link rel="stylesheet" type="text/css" href="css/header.css" />
+<link rel="stylesheet" type="text/css" href="css/footer.css">
+<link rel="stylesheet" type="text/css" href="css/loginPage.css">
+
 <title>${pageTitle}</title>
 </head>
 <body>
-	<div class="content">
-		<form action="user/login" method="post">
-			<label>账号：</label> <input type="text" id="txtUsername"
-				name="username" placeholder="请输入账号" /><br /> <label>密码：</label> <input
-				type="password" id="txtPassword" name="password" placeholder="请输入密码" /><br />
-			<input type="submit" value="提交" /> <input type="reset" value="重置" />
-		</form>
+<header:header />
+<div class="loginPageContent">
+		<div class="container">
+		</div>
 	</div>
+<footer:footer />
 </body>
 </html>
