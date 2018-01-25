@@ -1,12 +1,11 @@
 <%@  tag pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="header" tagdir="/WEB-INF/tags/"%>
 
 <div class="headerNav">
 	<div class="container containerHeaderNavCris">
 		<nav class="navbar navbar-default navbarCris" role="navigation">
 			<div class="navTopLogoDivCris">
-				<a href="#"><img src="image/icon/logo_origin.png" width="35%"
+				<a href="/CrisWebsite"><img src="image/icon/logo_origin.png" width="35%"
 					height="100%" /></a>
 			</div>
 			<ul class="nav nav-pills navTopLogoUlCris">

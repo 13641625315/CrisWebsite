@@ -22,11 +22,15 @@
 <title>${pageTitle}</title>
 </head>
 <body>
-<header:header />
-<div class="loginPageContent">
-		<div class="container">
+	<div class="loginPageContent">
+		<header:header />
+		<div class="leftedHeightLoginPage">
+			<div class="container">
+				<div class="registDiv">11</div>
+				<div class="loginDiv">22</div>
+			</div>
+			<footer:footer />
 		</div>
 	</div>
-<footer:footer />
 </body>
 </html>
