@@ -24,11 +24,11 @@
 <body>
 	<div class="loginPageContent">
 		<header:header />
-		<div class="leftedHeightLoginPage">
-			<div class="container">
-				<div class="registDiv">11</div>
-				<div class="loginDiv">22</div>
-			</div>
+		<div class="loginMainContent">
+			<div class="registDiv">11</div>
+			<div class="loginDiv">22</div>
+		</div>
+		<div class="loginFooterDiv">
 			<footer:footer />
 		</div>
 	</div>
