@@ -4,26 +4,93 @@
 
 .loginMainContent {
 	width: 100%;
-	position: absolute;
-	top: 100px;
-	bottom: 200px;
+	font-family: WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
+	font-size: 15px;
+	color: #428bca;
 }
 
 .registDiv {
+	margin: 50px 0px 50px 0px;
+	padding: 0px 60px 0px 0px;
 	width: 50%;
-	height: 100%;
+	height: 500px;
 	float: left;
 }
 
 .loginDiv {
+	margin: 50px 0px 50px 0px;
+	padding: 0px 0px 0px 60px;
 	width: 50%;
-	height: 100%;
+	height: 500px;
 	float: left;
+	border-left: solid 1px #428bca;
+	width: 50%;
 }
 
 .loginFooterDiv {
 	width: 100%;
-	position: absolute;
-	bottom: 0px;
-	position: absolute;
+}
+
+.regisInput {
+	margin: 10px auto 10px auto;
+	width: 65%;
+	height: 35px;
+}
+
+.regisInputIdCode {
+	margin: 10px auto 10px auto;
+	width: 45%;
+	height: 35px;
+}
+
+.regisButIdCode {
+	margin: 10px auto 10px 5px;
+	width: 19%;
+	height: 35px;
+}
+
+.registSubmit {
+	margin: 10px auto 10px auto;
+	width: 65%;
+	height: 35px;
+}
+
+.registForm {
+	margin: 50px auto 50px auto;
+}
+
+.registFormInner {
+	text-align: center;
+}
+
+.loginForm {
+	margin: 50px auto 50px auto;
+}
+
+.loginFormInner {
+	text-align: center;
+}
+
+.loginInput {
+	margin: 10px auto 10px auto;
+	width: 65%;
+	height: 35px;
+}
+
+.loginButIdCode {
+	margin: 10px auto 10px 5px;
+	width: 19%;
+	height: 35px;
+}
+
+.loginInputIdCode {
+	margin: 10px auto 10px auto;
+	width: 45%;
+	height: 35px;
+}
+
+.loginSubmit {
+	margin: 10px auto 10px auto;
+	width: 65%;
+	height: 35px;
 }

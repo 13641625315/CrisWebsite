@@ -24,9 +24,36 @@
 <body>
 	<div class="loginPageContent">
 		<header:header />
-		<div class="loginMainContent">
-			<div class="registDiv">11</div>
-			<div class="loginDiv">22</div>
+		<div class="container">
+			<div class="loginMainContent">
+				<div class="registDiv">
+					<form class="registForm">
+						<div class="registFormInner">
+							<input class="regisInput" type="text" name="phoneNum"
+								placeholder="手机号"><br> <input class="regisInput"
+								type="text" name="id" placeholder="用户名"><br> <input
+								class="regisInput" type="text" name="pass" placeholder="设置密码"><br>
+							<input class="regisInput" type="text" name="repass"
+								placeholder="确认密码"><br> <input
+								class="regisInputIdCode" type="text" name="idCode"
+								placeholder="验证码"><input class="regisButIdCode"
+								type="button" value="获取验证码"><br> <input
+								class="registSubmit" type="submit" value="注册会员">
+						</div>
+					</form>
+				</div>
+				<div class="loginDiv">
+					<form class="loginForm">
+						<div class="loginFormInner">
+							<input class="loginInput" type="text" name="phoneNum"
+								placeholder="手机号"><br> <input class="loginInputIdCode"
+								type="text" name="loginButIdCode" placeholder="验证码"><input
+								class="loginButIdCode" type="button" value="获取验证码"><br>
+							<input class="loginSubmit" type="submit" value="登入">
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 		<div class="loginFooterDiv">
 			<footer:footer />
