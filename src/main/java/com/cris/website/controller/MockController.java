@@ -20,7 +20,7 @@ public class MockController {
 	@Resource
 	CrisWSFacades crisWSFacades;
 
-	@RequestMapping(value = "mock")
+	@RequestMapping(value = "/mock")
 	public String indexPage(HttpServletRequest request, HttpServletResponse response, Model model)
 			throws JsonConverterException {
 		return null;
