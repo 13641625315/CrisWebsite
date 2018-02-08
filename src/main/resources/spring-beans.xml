@@ -21,7 +21,7 @@
 	<bean id="cusAccessObjectUtil" class="com.cris.website.util.CusAccessObjectUtil">
 		<property name="IP138_URL" value="${ip138.url}" />
 	</bean>
-	
+
 	<bean id="heFengWeatherClient" class="com.cris.website.client.HeFengWeatherClient">
 		<property name="restTemplate" ref="restTemplate" />
 		<property name="HEFENG_WEATHER_URL" value="${hefeng.weather.url}" />
@@ -34,5 +34,9 @@
 
 	<bean id="crisWSFacades" class="com.cris.website.facades.impl.CrisWSFacadesImpl">
 		<property name="crisWSService" ref="crisWSService" />
+	</bean>
+
+	<bean id="crisAbstractDaoImpl" class="com.cris.website.dao.impl.CrisAbstractDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 </beans>

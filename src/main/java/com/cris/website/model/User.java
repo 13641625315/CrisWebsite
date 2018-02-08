@@ -8,17 +8,9 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User {
 	@Id
-	private String uid;
 	private String phoneNum;
+	private String nickName;
 	private String password;
-
-	public String getUid() {
-		return uid;
-	}
-
-	public void setUid(String uid) {
-		this.uid = uid;
-	}
 
 	public String getPhoneNum() {
 		return phoneNum;
@@ -28,6 +20,14 @@ public class User {
 		this.phoneNum = phoneNum;
 	}
 
+	public String getNickName() {
+		return nickName;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
 	public String getPassword() {
 		return password;
 	}
@@ -35,13 +35,5 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	// CREATE TABLE `criswebsite`.`user` (
-	// `uid` INT NOT NULL,
-	// `phoneNum` VARCHAR(20) NOT NULL,
-	// `password` VARCHAR(20) NOT NULL,
-	// PRIMARY KEY (`uid`),
-	// UNIQUE INDEX `uid_UNIQUE` (`uid` ASC),
-	// UNIQUE INDEX `phoneNum_UNIQUE` (`phoneNum` ASC));
 
 }

@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class TestController {
 	
-	@RequestMapping(value="test")
+	@RequestMapping(value="/test")
     public ModelAndView indexPage(HttpServletRequest request,HttpServletResponse response,Model model){
 		final Log log = LogFactory.getLog(getClass());
 		log.info("TEST PAGE!"+System.getProperty("CrisWebsiteRootKey"));
