@@ -43,13 +43,12 @@
 					</form>
 				</div>
 				<div class="loginDiv">
-					<form class="loginForm">
+					<form class="loginForm" action="${loginUrl}" method="post">
 						<div class="loginFormInner">
 							<input class="loginInput" type="text" name="phoneNum"
-								placeholder="手机号"><br> <input class="loginInputIdCode"
-								type="text" name="loginButIdCode" placeholder="验证码"><input
-								class="loginButIdCode" type="button" value="获取验证码"><br>
-							<input class="loginSubmit" type="submit" value="登入">
+								placeholder="手机号"><br> <input class="loginInput"
+								type="text" name="pass" placeholder="密码"><br> <input
+								class="loginSubmit" type="submit" value="登入">
 						</div>
 					</form>
 				</div>

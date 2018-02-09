@@ -33,6 +33,8 @@ public class PageController {
 	public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Model model) {
 		model.addAttribute("pageTitle", PAGE_TITLE_PREFIX + "登入注册");
 		model.addAttribute("pageID", "loginPage");
+		model.addAttribute("loginUrl", "/CrisWebsite/userLogin");
+		model.addAttribute("registUrl", "/CrisWebsite/userRegist");
 		return new ModelAndView("loginPage");
 	}
 }

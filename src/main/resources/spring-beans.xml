@@ -39,4 +39,16 @@
 	<bean id="crisAbstractDaoImpl" class="com.cris.website.dao.impl.CrisAbstractDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+
+	<bean id="uerDaoImpl" class="com.cris.website.dao.impl.UserDaoImpl"
+		parent="crisAbstractDaoImpl">
+	</bean>
+
+	<bean id="userServiceImpl" class="com.cris.website.service.impl.UserServiceImpl">
+		<property name="uerDaoImpl" ref="uerDaoImpl" />
+	</bean>
+
+	<bean id="userFacadesImpl" class="com.cris.website.facades.impl.UserFacadesImpl">
+		<property name="userServiceImpl" ref="userServiceImpl" />
+	</bean>
 </beans>

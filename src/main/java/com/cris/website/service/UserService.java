@@ -1,7 +1,7 @@
-package com.cris.website.dao;
+package com.cris.website.service;
 
 import com.cris.website.model.User;
 
-public interface UserDao extends CrisAbstractDao {
+public interface UserService {
 	public abstract User findUserByPhoneNum(String phoneNum);
 }

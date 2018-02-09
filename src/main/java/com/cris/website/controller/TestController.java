@@ -11,15 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping(value = "/test")
 public class TestController {
-	
-	@RequestMapping(value="/test")
-    public ModelAndView indexPage(HttpServletRequest request,HttpServletResponse response,Model model){
+
+	@RequestMapping(value = "/log")
+	public ModelAndView indexPage(HttpServletRequest request, HttpServletResponse response, Model model) {
 		final Log log = LogFactory.getLog(getClass());
-		log.info("TEST PAGE!"+System.getProperty("CrisWebsiteRootKey"));
+		log.info("TEST PAGE!" + System.getProperty("CrisWebsiteRootKey"));
 		log.debug("TEST PAGE!");
 		log.error("TEST PAGE!");
 		model.addAttribute("pageTitle", "测试页");
-        return new ModelAndView("testPage");
-    }
+		return new ModelAndView("testPage");
+	}
 }
