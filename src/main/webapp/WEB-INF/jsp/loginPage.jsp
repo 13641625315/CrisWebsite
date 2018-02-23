@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="header" tagdir="/WEB-INF/tags/header"%>
 <%@ taglib prefix="footer" tagdir="/WEB-INF/tags/footer"%>
-
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,18 +27,18 @@
 		<div class="container">
 			<div class="loginMainContent">
 				<div class="registDiv">
-					<form class="registForm">
+					<form class="registForm" action="${registUrl}" method="post">
 						<div class="registFormInner">
 							<input class="regisInput" type="text" name="phoneNum"
 								placeholder="手机号"><br> <input class="regisInput"
-								type="text" name="id" placeholder="用户名"><br> <input
-								class="regisInput" type="text" name="pass" placeholder="设置密码"><br>
-							<input class="regisInput" type="text" name="repass"
-								placeholder="确认密码"><br> <input
+								type="text" name="nickName" placeholder="用户名"><br>
+							<input class="regisInput" type="text" name="pass"
+								placeholder="设置密码"><br> <input class="regisInput"
+								type="text" name="repass" placeholder="确认密码"><br> <input
 								class="regisInputIdCode" type="text" name="idCode"
 								placeholder="验证码"><input class="regisButIdCode"
-								type="button" value="获取验证码"><br> <input
-								class="registSubmit" type="submit" value="注册会员">
+								name="getIdCodeBut" type="button" value="获取验证码"><br>
+							<input class="registSubmit" type="submit" value="注册会员">
 						</div>
 					</form>
 				</div>
@@ -47,8 +47,10 @@
 						<div class="loginFormInner">
 							<input class="loginInput" type="text" name="phoneNum"
 								placeholder="手机号"><br> <input class="loginInput"
-								type="text" name="pass" placeholder="密码"><br> <input
-								class="loginSubmit" type="submit" value="登入">
+								type="password" name="pass" placeholder="密码"><br> <input
+								class="loginSubmit" type="submit" value="登入"> <input
+								type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" />
 						</div>
 					</form>
 				</div>

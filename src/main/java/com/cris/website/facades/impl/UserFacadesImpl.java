@@ -2,7 +2,7 @@ package com.cris.website.facades.impl;
 
 import com.cris.website.data.UserData;
 import com.cris.website.facades.UserFacades;
-import com.cris.website.model.User;
+import com.cris.website.model.UserModel;
 import com.cris.website.service.UserService;
 
 public class UserFacadesImpl implements UserFacades {
@@ -10,7 +10,7 @@ public class UserFacadesImpl implements UserFacades {
 
 	@Override
 	public UserData findUserByPhoneNum(String phoneNum) {
-		User user = userServiceImpl.findUserByPhoneNum(phoneNum);
+		UserModel user = userServiceImpl.findUserByPhoneNum(phoneNum);
 		UserData userData = new UserData();
 		userData.setNickName(user.getNickName());
 		userData.setPhoneNum(user.getPhoneNum());

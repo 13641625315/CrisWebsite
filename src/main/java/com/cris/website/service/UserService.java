@@ -1,7 +1,7 @@
 package com.cris.website.service;
 
-import com.cris.website.model.User;
+import com.cris.website.model.UserModel;
 
 public interface UserService {
-	public abstract User findUserByPhoneNum(String phoneNum);
+	public abstract UserModel findUserByPhoneNum(String phoneNum);
 }
