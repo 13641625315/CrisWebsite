@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cris.website.dao.CrisAbstractDao;
@@ -22,7 +23,7 @@ public class AdminController {
 	@Resource
 	private CrisAbstractDao crisAbstractDaoImpl;
 
-	@RequestMapping(value = "/initialData")
+	@RequestMapping(value = "/initialData", method = RequestMethod.GET)
 	public ModelAndView initialData(HttpServletRequest request, HttpServletResponse response, Model model)
 			throws Exception {
 		// initial usergroup

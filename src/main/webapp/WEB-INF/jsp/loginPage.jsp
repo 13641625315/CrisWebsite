@@ -27,7 +27,7 @@
 		<div class="container">
 			<div class="loginMainContent">
 				<div class="registDiv">
-					<form class="registForm" action="${registUrl}" method="post">
+					<form class="registForm" action="/CrisWebsite/userRegist" method="post">
 						<div class="registFormInner">
 							<input class="regisInput" type="text" name="phoneNum"
 								placeholder="手机号"><br> <input class="regisInput"
@@ -43,11 +43,12 @@
 					</form>
 				</div>
 				<div class="loginDiv">
-					<form class="loginForm" action="${loginUrl}" method="post">
+					<form class="loginForm" action="/CrisWebsite/login" method="post">
 						<div class="loginFormInner">
 							<input class="loginInput" type="text" name="phoneNum"
 								placeholder="手机号"><br> <input class="loginInput"
 								type="password" name="pass" placeholder="密码"><br> <input
+								name="remember-me" type="hidden" checked="checked" /><input
 								class="loginSubmit" type="submit" value="登入"> <input
 								type="hidden" name="${_csrf.parameterName}"
 								value="${_csrf.token}" />

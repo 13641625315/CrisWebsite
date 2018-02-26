@@ -18,13 +18,27 @@
 		<form-login login-page="/loginPage" username-parameter="phoneNum"
 			password-parameter="pass" default-target-url="/indexPage"
 			authentication-failure-url="/loginPage" />
+		<logout invalidate-session="true" logout-success-url="/indexPage" />
+		<session-management
+			session-authentication-error-url="/loginPage">
+			<!-- max-sessions只容许一个账号登录，error-if-maximum-exceeded 后面账号登录后踢出前一个账号，expired-url 
+				session过期跳转界面 -->
+			<concurrency-control max-sessions="1"
+				error-if-maximum-exceeded="false" expired-url="/loginPage"
+				session-registry-ref="sessionRegistry" />
+		</session-management>
 	</http>
 
 	<authentication-manager>
 		<authentication-provider user-service-ref="crisUserDetailsService" />
 	</authentication-manager>
 
-	<beans:bean id="crisUserDetailsService"
-		class="com.cris.website.security.CrisUserDetailsService" />
+	<beans:bean id="sessionRegistry"
+		class="org.springframework.security.core.session.SessionRegistryImpl">
+	</beans:bean>
 
+	<beans:bean id="crisUserDetailsService"
+		class="com.cris.website.security.CrisUserDetailsService">
+		<beans:property name="userServiceImpl" ref="userServiceImpl" />
+	</beans:bean>
 </beans:beans>

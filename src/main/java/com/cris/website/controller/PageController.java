@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cris.website.facades.CrisWSFacades;
@@ -20,7 +21,7 @@ public class PageController {
 	@Resource
 	CrisWSFacades crisWSFacades;
 
-	@RequestMapping(value = "/indexPage")
+	@RequestMapping(value = "/indexPage", method = RequestMethod.GET)
 	public ModelAndView indexPage(HttpServletRequest request, HttpServletResponse response, Model model) {
 		HeWeather heWeather = crisWSFacades.getWeatherForIP(CusAccessObjectUtil.getPublicIP());
 		model.addAttribute("pageTitle", PAGE_TITLE_PREFIX + "首页");
@@ -29,16 +30,14 @@ public class PageController {
 		return new ModelAndView("indexPage");
 	}
 
-	@RequestMapping(value = "/loginPage")
+	@RequestMapping(value = "/loginPage", method = RequestMethod.GET)
 	public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Model model) {
 		model.addAttribute("pageTitle", PAGE_TITLE_PREFIX + "登入注册");
 		model.addAttribute("pageID", "loginPage");
-		model.addAttribute("loginUrl", "/CrisWebsite/loginPage");
-		model.addAttribute("registUrl", "/CrisWebsite/userRegist");
 		return new ModelAndView("loginPage");
 	}
 
-	@RequestMapping(value = "/adminPage")
+	@RequestMapping(value = "/adminPage", method = RequestMethod.GET)
 	public ModelAndView adminPage(HttpServletRequest request, HttpServletResponse response, Model model) {
 		model.addAttribute("pageTitle", PAGE_TITLE_PREFIX + "管理");
 		return new ModelAndView("adminPage");
