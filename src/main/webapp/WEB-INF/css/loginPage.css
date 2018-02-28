@@ -3,10 +3,12 @@
 }
 
 .loginMainContent {
+	height: 600px;
 	width: 100%;
 	font-family: WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
 	font-size: 15px;
 	color: #428bca;
+	width: 100%;
 }
 
 .registDiv {
@@ -63,6 +65,14 @@
 	text-align: center;
 }
 
+#registFormIdCodeControl {
+	height: 55px;
+}
+
+* #registFormIdCode {
+	display: inline-flex;
+}
+
 .loginForm {
 	margin: 50px auto 50px auto;
 }
@@ -79,7 +89,7 @@
 
 .loginButIdCode {
 	margin: 10px auto 10px 5px;
-	width: 19%;
+	width: 18%;
 	height: 35px;
 }
 

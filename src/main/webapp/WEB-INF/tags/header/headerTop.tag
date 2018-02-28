@@ -4,7 +4,7 @@
 	uri="http://www.springframework.org/security/tags"%>
 
 <div class="headerTop">
-	<div class="container">
+	<div class="crisContainer">
 		<div class="headerWeather">
 			<div class="headerWeatherDetail">
 				<div class="headerWeatherDetailText">${heWeather.heWeather5[0].basic.city}&nbsp;&nbsp;</div>
@@ -23,15 +23,24 @@
 				</sec:authorize>
 				<sec:authorize access="hasAnyRole('ROLE_USER')">
 					<span class="headerAccountDetailLink"><a href="#">充值</a></span>
-					<span class="headerAccountDetailLink"><a
-						href="/CrisWebsite/logout">注销</a></span>
+					<span class="headerAccountDetailLink"> <!-- <a
+						href="/CrisWebsite/logout">注销</a> --> <a href="javascript:void(0)"
+						onclick="headerLogout()">注销</a></span>
 				</sec:authorize>
 			</div>
 		</div>
 	</div>
 </div>
 
-<form name='logoutForm' action='/CrisWebsite/logout' method='post'>
+<form id='logoutForm' name='logoutForm' action='/CrisWebsite/logout'
+	method='post'>
 	<input type="hidden" name="${_csrf.parameterName}"
 		value="${_csrf.token}" />
 </form>
+
+<script>
+	function headerLogout() {
+		var logoutForm = document.getElementById('logoutForm');
+		logoutForm.submit();
+	}
+</script>

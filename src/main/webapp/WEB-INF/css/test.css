@@ -1,0 +1,13 @@
+.crisContainer {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 1200px;
+}
+
+.headerContainer {
+	height: 200px;
+	width: 100%;
+	background-color: #428bca;
+}

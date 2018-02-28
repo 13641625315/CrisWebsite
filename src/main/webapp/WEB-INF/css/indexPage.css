@@ -3,15 +3,19 @@
 	height: 225px;
 }
 
-.indexSubscribeContent>.container>h2 {
+.indexSubscribeContent>.crisContainer>h2 {
 	color: #428bca;
 	font-family: WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
 	text-align: center;
 }
 
-.indexSubscribeContent>.container>form {
+.indexSubscribeContent>.crisContainer>form {
 	display: table;
 	margin: 0 auto 0 auto;
+}
+
+.crisindexSubscribe{
+	text-align: center;
 }
 
 #indexSubscribeContentEmail {

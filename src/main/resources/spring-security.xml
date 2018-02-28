@@ -13,12 +13,14 @@
 		<intercept-url pattern="/bootstrap/**" access="permitAll" />
 		<intercept-url pattern="/indexPage" access="permitAll" />
 		<intercept-url pattern="/loginPage" access="permitAll" />
-		<intercept-url pattern="/adminPage**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/test/testPage" access="permitAll" />
+		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
 		<form-login login-page="/loginPage" username-parameter="phoneNum"
 			password-parameter="pass" default-target-url="/indexPage"
-			authentication-failure-url="/loginPage" />
-		<logout invalidate-session="true" logout-success-url="/indexPage" />
+			authentication-failure-url="/loginPage?authenticated=false" />
+		<logout invalidate-session="
+			true " logout-success-url="/indexPage" />
 		<session-management
 			session-authentication-error-url="/loginPage">
 			<!-- max-sessions只容许一个账号登录，error-if-maximum-exceeded 后面账号登录后踢出前一个账号，expired-url 
@@ -30,11 +32,20 @@
 	</http>
 
 	<authentication-manager>
-		<authentication-provider user-service-ref="crisUserDetailsService" />
+		<authentication-provider user-service-ref="crisUserDetailsService">
+			<password-encoder hash="md5">
+				<!-- 将每个用户的username作为盐值 -->
+				<salt-source user-property="username" />
+			</password-encoder>
+		</authentication-provider>
 	</authentication-manager>
 
 	<beans:bean id="sessionRegistry"
 		class="org.springframework.security.core.session.SessionRegistryImpl">
+	</beans:bean>
+
+	<beans:bean id="md5PasswordEncoder"
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder">
 	</beans:bean>
 
 	<beans:bean id="crisUserDetailsService"

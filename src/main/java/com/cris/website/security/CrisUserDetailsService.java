@@ -25,6 +25,7 @@ public class CrisUserDetailsService implements UserDetailsService {
 
 	final Log LOG = LogFactory.getLog(getClass());
 
+	private static String USER_USER_GROUP_NAME = "User";
 	private static String ADMIN_USER_GROUP_NAME = "Admin";
 
 	@Transactional(readOnly = true)
@@ -43,15 +44,12 @@ public class CrisUserDetailsService implements UserDetailsService {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 		if (null != user && CollectionUtils.isNotEmpty(user.getUserGroups())) {
-			boolean isAdmin = false;
 			for (UserGroupModel userGroupModel : user.getUserGroups()) {
 				if (ADMIN_USER_GROUP_NAME.equals(userGroupModel.getGroupname())) {
-					isAdmin = true;
-					break;
+					authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+				} else if (USER_USER_GROUP_NAME.equals(userGroupModel.getGroupname())) {
+					authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 				}
-			}
-			if (isAdmin) {
-				authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
 			}
 		}
 		return authorities;

@@ -1,12 +1,15 @@
-.footer {
-	height: 200px;
+footer {
 	width: 100%;
 	background-color: #428bca;
 }
 
+.footerDiv {
+	height: 200px;
+	width: 1200px;
+}
+
 .copyright {
 	width: 100%;
-	height: 20px;
 	color: #fff;
 	padding: 90px 0 90px 0;
 	font-style: normal;
@@ -14,4 +17,5 @@
 	font-family: WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
 	text-align: center;
 	font-size: 13px;
+	color: #fff;
 }

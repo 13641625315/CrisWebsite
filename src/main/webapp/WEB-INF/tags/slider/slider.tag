@@ -2,14 +2,14 @@
 <div id="carousel-example-generic"
 	class="carousel slide sliderCrisBackground" data-ride="carousel">
 	<!-- Indicators -->
-	<ol class="carousel-indicators">
+	<!-- <ol class="carousel-indicators">
 		<li data-target="#carousel-example-generic" data-slide-to="0"
 			class="active"></li>
 		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-	</ol>
+	</ol> -->
 	<!-- Wrapper for slides -->
-	<div class="container">
+	<div class="crisContainer">
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
 				<img id="sliderImageCris" src="image/carousel/a1.png">

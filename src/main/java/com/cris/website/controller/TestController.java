@@ -14,6 +14,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/test")
 public class TestController {
+	@RequestMapping(value = "/testPage", method = RequestMethod.GET)
+	public ModelAndView testPage(HttpServletRequest request, HttpServletResponse response, Model model) {
+		model.addAttribute("pageTitle", "测试页");
+		return new ModelAndView("testPage");
+	}
 
 	@RequestMapping(value = "/log", method = RequestMethod.GET)
 	public ModelAndView indexPage(HttpServletRequest request, HttpServletResponse response, Model model) {

@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="headerLogin">
-	<div class="container containerHerderLogin">
+	<div class="crisContainer">
 		<div class="headerLoginLogoDivCris">
 			<a href="/CrisWebsite"><img class="headerLoginLogoImgCris"
 				src="image/icon/logo_origin.png" /></a>

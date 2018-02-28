@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="headerNav">
-	<div class="container containerHeaderNavCris">
+	<div class="crisContainer containerHeaderNavCris">
 		<nav class="navbar navbar-default navbarCris" role="navigation">
 			<div class="navTopLogoDivCris">
 				<a href="/CrisWebsite"><img src="image/icon/logo_origin.png" width="35%"

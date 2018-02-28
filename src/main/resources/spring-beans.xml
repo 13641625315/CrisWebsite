@@ -40,12 +40,12 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-	<bean id="uerDaoImpl" class="com.cris.website.dao.impl.UserDaoImpl"
+	<bean id="userDaoImpl" class="com.cris.website.dao.impl.UserDaoImpl"
 		parent="crisAbstractDaoImpl">
 	</bean>
 
 	<bean id="userServiceImpl" class="com.cris.website.service.impl.UserServiceImpl">
-		<property name="uerDaoImpl" ref="uerDaoImpl" />
+		<property name="userDaoImpl" ref="userDaoImpl" />
 	</bean>
 
 	<bean id="userFacadesImpl" class="com.cris.website.facades.impl.UserFacadesImpl">

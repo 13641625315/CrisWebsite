@@ -6,18 +6,24 @@ import com.cris.website.service.UserService;
 
 public class UserServiceImpl implements UserService {
 
-	private UserDao uerDaoImpl;
+	private UserDao userDaoImpl;
 
 	@Override
 	public UserModel findUserByPhoneNum(String phoneNum) {
-		return uerDaoImpl.findUserByPhoneNum(phoneNum);
+		return userDaoImpl.findUserByPhoneNum(phoneNum);
 	}
 
-	public UserDao getUerDaoImpl() {
-		return uerDaoImpl;
+	@Override
+	public void saveUser(UserModel user) throws Exception {
+		userDaoImpl.saveModel(user);
 	}
 
-	public void setUerDaoImpl(UserDao uerDaoImpl) {
-		this.uerDaoImpl = uerDaoImpl;
+	public UserDao getUserDaoImpl() {
+		return userDaoImpl;
 	}
+
+	public void setUserDaoImpl(UserDao userDaoImpl) {
+		this.userDaoImpl = userDaoImpl;
+	}
+
 }
