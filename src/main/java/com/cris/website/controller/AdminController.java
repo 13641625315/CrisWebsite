@@ -17,26 +17,27 @@ import org.springframework.web.servlet.ModelAndView;
 import com.cris.website.dao.CrisAbstractDao;
 import com.cris.website.model.UserGroupModel;
 import com.cris.website.model.UserModel;
-import com.cris.website.service.UserService;;
 
 @Controller
 @RequestMapping(value = "/Admin")
 public class AdminController {
 
 	@Resource
-	private UserService userServiceImpl;
+	private CrisAbstractDao crisAbstractDaoImpl;
 	@Resource
 	private Md5PasswordEncoder md5PasswordEncoder;
 
 	@RequestMapping(value = "/initialData", method = RequestMethod.GET)
 	public ModelAndView initialData(HttpServletRequest request, HttpServletResponse response, Model model)
 			throws Exception {
-		// initial usergroup
+		// initial UserGroupModel
 		UserGroupModel userGroup = new UserGroupModel();
-		userGroup.setGroupname("User");
+		userGroup.setGroupName("User");
+		crisAbstractDaoImpl.saveModel(userGroup);
 		UserGroupModel adminGroup = new UserGroupModel();
-		adminGroup.setGroupname("Admin");
-		// initial user
+		adminGroup.setGroupName("Admin");
+		crisAbstractDaoImpl.saveModel(adminGroup);
+		// initial UserModel
 		UserModel user = new UserModel();
 		user.setNickName("cris");
 		user.setPassword(md5PasswordEncoder.encodePassword("cris1234", "13641625315"));
@@ -46,7 +47,7 @@ public class AdminController {
 		userGroups.add(userGroup);
 		userGroups.add(adminGroup);
 		user.setUserGroups(userGroups);
-		userServiceImpl.saveUser(user);
+		crisAbstractDaoImpl.saveModel(user);
 		return new ModelAndView("redirect:/indexPage");
 	}
 

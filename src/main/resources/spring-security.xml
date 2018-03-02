@@ -13,6 +13,7 @@
 		<intercept-url pattern="/bootstrap/**" access="permitAll" />
 		<intercept-url pattern="/indexPage" access="permitAll" />
 		<intercept-url pattern="/loginPage" access="permitAll" />
+		<intercept-url pattern="/util/captcha" access="permitAll" />
 		<intercept-url pattern="/test/testPage" access="permitAll" />
 		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />

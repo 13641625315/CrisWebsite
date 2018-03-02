@@ -46,6 +46,7 @@
 
 	<bean id="userServiceImpl" class="com.cris.website.service.impl.UserServiceImpl">
 		<property name="userDaoImpl" ref="userDaoImpl" />
+		<property name="md5PasswordEncoder" ref="md5PasswordEncoder" />
 	</bean>
 
 	<bean id="userFacadesImpl" class="com.cris.website.facades.impl.UserFacadesImpl">

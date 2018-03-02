@@ -31,7 +31,11 @@ public class PageController {
 	}
 
 	@RequestMapping(value = "/loginPage", method = RequestMethod.GET)
-	public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Model model) {
+	public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Boolean authenticated,
+			Model model) {
+		if (null != authenticated && !authenticated) {
+			model.addAttribute("loginError", "用户名密码不正确,或者权限不够");
+		}
 		model.addAttribute("pageTitle", PAGE_TITLE_PREFIX + "登入注册");
 		model.addAttribute("pageID", "loginPage");
 		return new ModelAndView("loginPage");

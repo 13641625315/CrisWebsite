@@ -10,16 +10,16 @@ import javax.persistence.Table;
 @Table(name = "usergroup")
 public class UserGroupModel extends DefaultModel {
 	private static final long serialVersionUID = 491793937580719013L;
-	
-	private String groupname;
+
+	private String groupName;
 	private List<UserModel> users;
 
-	public String getGroupname() {
-		return groupname;
+	public String getGroupName() {
+		return groupName;
 	}
 
-	public void setGroupname(String groupname) {
-		this.groupname = groupname;
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
 	}
 
 	@ManyToMany(targetEntity = UserModel.class, mappedBy = "userGroups")

@@ -45,9 +45,20 @@
 			return false;
 		}
 		//校验Pass&Repass
-
+		if (!isPassAvailable($("#registFormPassControl").val())) {
+			$("#registFormPassControl").addClass("has-error");
+			return false;
+		}
+		if (!isRepassAvailable($("#registFormPassControl").val(),$("#registFormRepassControl").val())) {
+			$("#registFormRepassControl").addClass("has-error");
+			return false;
+		}
 		//校验验证码
-		return false;
+		if (registFormIdCode.val().trim() == "") {
+			$("#registFormIdCodeControl").addClass("has-error");
+			return false;
+		}
+		return true;
 	}
 
 	function isPhoneNumAvailable(phoneNum) {
@@ -88,6 +99,35 @@
 	     	return false;
 	     }
 	}
+	
+	function isPassAvailable(pass){
+		if (pass.trim() == "") {
+		       return false;
+		}
+		var reg = /^[A-Za-z0-9]{6,16}$/;
+		if (!reg.test(pass)) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	function isRepassAvailable(pass,repass){
+		if (repass.trim() == "") {
+		       return false;
+		}
+		if (!pass==repass) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	window.onload=function(){
+		$("#loginCaptchaImage").click(function(){
+			$("#loginCaptchaImage").attr("src", "/CrisWebsite/util/captcha?timestamp=" + (new Date()).valueOf());
+		});
+	}
 </script>
 </head>
 <body>
@@ -121,6 +161,9 @@
 								<input class="regisButIdCode" id="registFormGetIdCodeBut"
 									name="getIdCodeBut" type="button" value="获取验证码">
 							</div>
+							<c:if test="${not empty registError}">
+								<p class="registError text-danger">registError</p>
+							</c:if>
 							<input class="registSubmit" type="submit" value="注册会员"> <input
 								type="hidden" name="${_csrf.parameterName}"
 								value="${_csrf.token}" />
@@ -138,8 +181,17 @@
 								<input class="loginInput form-control" type="password"
 									name="pass" placeholder="密码">
 							</div>
-							<input name="remember-me" type="hidden" checked="checked" /><input
-								class="loginSubmit" type="submit" value="登入"> <input
+							<div id="loginFormIdCodeControl">
+								<input type="text" id="loginCaptcha" name="loginCaptcha"
+									class="loginInputIdCode form-control" maxlength="4"
+									placeholder="验证码" /> <img class="loginButIdCode"
+									id="loginCaptchaImage" src="/CrisWebsite/util/captcha" /> <input
+									name="remember-me" type="hidden" checked="checked" />
+							</div>
+							<c:if test="${not empty loginError}">
+								<p class="loginError text-danger">${loginError}</p>
+							</c:if>
+							<input class="loginSubmit" type="submit" value="登入"> <input
 								type="hidden" name="${_csrf.parameterName}"
 								value="${_csrf.token}" />
 						</div>

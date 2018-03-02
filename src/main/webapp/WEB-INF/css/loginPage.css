@@ -47,7 +47,7 @@
 
 .regisButIdCode {
 	margin: 10px auto 10px 5px;
-	width: 19%;
+	width: 18%;
 	height: 35px;
 }
 
@@ -65,12 +65,20 @@
 	text-align: center;
 }
 
+.registError {
+	margin: auto;
+}
+
 #registFormIdCodeControl {
 	height: 55px;
 }
 
-* #registFormIdCode {
+#registFormIdCode {
 	display: inline-flex;
+}
+
+.registFormInner>div>.form-control {
+	display: -webkit-inline-box
 }
 
 .loginForm {
@@ -103,4 +111,16 @@
 	margin: 10px auto 10px auto;
 	width: 65%;
 	height: 35px;
+}
+
+.loginFormInner>div>.form-control {
+	display: -webkit-inline-box
+}
+
+.loginError {
+	margin: auto;
+}
+
+#loginFormIdCodeControl {
+	height: 55px;
 }

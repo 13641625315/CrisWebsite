@@ -45,9 +45,9 @@ public class CrisUserDetailsService implements UserDetailsService {
 		authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 		if (null != user && CollectionUtils.isNotEmpty(user.getUserGroups())) {
 			for (UserGroupModel userGroupModel : user.getUserGroups()) {
-				if (ADMIN_USER_GROUP_NAME.equals(userGroupModel.getGroupname())) {
+				if (ADMIN_USER_GROUP_NAME.equals(userGroupModel.getGroupName())) {
 					authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-				} else if (USER_USER_GROUP_NAME.equals(userGroupModel.getGroupname())) {
+				} else if (USER_USER_GROUP_NAME.equals(userGroupModel.getGroupName())) {
 					authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 				}
 			}
