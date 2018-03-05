@@ -39,9 +39,9 @@ public class AdminController {
 		crisAbstractDaoImpl.saveModel(adminGroup);
 		// initial UserModel
 		UserModel user = new UserModel();
-		user.setNickName("cris");
-		user.setPassword(md5PasswordEncoder.encodePassword("cris1234", "13641625315"));
-		user.setPhoneNum("13641625315");
+		user.setNickName("Admin");
+		user.setPassword(md5PasswordEncoder.encodePassword("nimda", "11111111111"));
+		user.setPhoneNum("11111111111");
 		user.setIsActive(true);
 		List<UserGroupModel> userGroups = new ArrayList<>();
 		userGroups.add(userGroup);

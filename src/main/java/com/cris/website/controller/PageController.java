@@ -31,10 +31,18 @@ public class PageController {
 	}
 
 	@RequestMapping(value = "/loginPage", method = RequestMethod.GET)
-	public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Boolean authenticated,
+	public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, String authenticated,
 			Model model) {
-		if (null != authenticated && !authenticated) {
-			model.addAttribute("loginError", "用户名密码不正确,或者权限不够");
+		if (null != authenticated) {
+			if ("default".equals(authenticated)) {
+				model.addAttribute("loginError", "登入失败");
+			} else if ("phonenum".equals(authenticated)) {
+				model.addAttribute("loginError", "无效用户名");
+			} else if ("pass".equals(authenticated)) {
+				model.addAttribute("loginError", "密码错误");
+			} else if ("captcha".equals(authenticated)) {
+				model.addAttribute("loginError", "验证码错误");
+			}
 		}
 		model.addAttribute("pageTitle", PAGE_TITLE_PREFIX + "登入注册");
 		model.addAttribute("pageID", "loginPage");

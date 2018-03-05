@@ -45,19 +45,20 @@
 			return false;
 		}
 		//校验Pass&Repass
-		if (!isPassAvailable($("#registFormPassControl").val())) {
+		if (!isPassAvailable($("#registFormPass").val())) {
 			$("#registFormPassControl").addClass("has-error");
 			return false;
 		}
-		if (!isRepassAvailable($("#registFormPassControl").val(),$("#registFormRepassControl").val())) {
+		if (!isRepassAvailable($("#registFormPass").val(),$("#registFormRepass").val())) {
 			$("#registFormRepassControl").addClass("has-error");
 			return false;
 		}
 		//校验验证码
-		if (registFormIdCode.val().trim() == "") {
+		if ($("#registFormIdCode").val().trim() == "") {
 			$("#registFormIdCodeControl").addClass("has-error");
 			return false;
 		}
+		
 		return true;
 	}
 
@@ -65,7 +66,7 @@
 		if (phoneNum.trim() == "") {
 		       return false;
 		}
-		//11为数字
+		//11位数字
 		var reg = /^[1][0-9]{10}$/;
 		if (!reg.test(phoneNum)) {
 			return false;
@@ -148,11 +149,11 @@
 									id="registFormNickName" name="nickName" placeholder="用户名">
 							</div>
 							<div id="registFormPassControl">
-								<input class="regisInput form-control" type="text"
+								<input class="regisInput form-control" type="password"
 									id="registFormPass" name="pass" placeholder="设置密码">
 							</div>
 							<div id="registFormRepassControl">
-								<input class="regisInput form-control" type="text"
+								<input class="regisInput form-control" type="password"
 									id="registFormRepass" name="repass" placeholder="确认密码">
 							</div>
 							<div id="registFormIdCodeControl">

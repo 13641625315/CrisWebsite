@@ -23,7 +23,7 @@ public class AccountController {
 	public ModelAndView userRegist(@RequestParam String phoneNum, @RequestParam String nickName,
 			@RequestParam String pass, @RequestParam String repass, @RequestParam String idCode,
 			HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-		userServiceImpl.UserRegist(phoneNum, nickName, pass, repass, idCode);
+		userServiceImpl.userRegist(phoneNum, nickName, pass, repass, idCode);
 		return new ModelAndView("redirect:/loginPage");
 	}
 }

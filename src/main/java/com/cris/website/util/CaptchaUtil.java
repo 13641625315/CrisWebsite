@@ -16,6 +16,8 @@ import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
 public final class CaptchaUtil {
+	private static String CAPTCHA_VALUE = "captcha";
+
 	private CaptchaUtil() {
 	}
 
@@ -61,7 +63,7 @@ public final class CaptchaUtil {
 		response.setContentType("image/jpeg");
 
 		String randomString = getRandomString();
-		request.getSession(true).setAttribute("randomString", randomString);
+		request.getSession(true).setAttribute(CAPTCHA_VALUE, randomString);
 
 		int width = 80;
 		int height = 30;

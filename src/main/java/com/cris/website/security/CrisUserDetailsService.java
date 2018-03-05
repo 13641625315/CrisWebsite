@@ -40,7 +40,6 @@ public class CrisUserDetailsService implements UserDetailsService {
 	}
 
 	private List<GrantedAuthority> getGrantedAuthorities(UserModel user) {
-		LOG.info(user.toString());
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 		if (null != user && CollectionUtils.isNotEmpty(user.getUserGroups())) {
