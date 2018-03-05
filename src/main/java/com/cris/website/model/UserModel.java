@@ -3,6 +3,7 @@ package com.cris.website.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -16,7 +17,7 @@ import org.hibernate.annotations.CascadeType;
 @Table(name = "user", uniqueConstraints = { @UniqueConstraint(columnNames = "phoneNum") })
 public class UserModel extends DefaultModel {
 	private static final long serialVersionUID = -2341903918651859293L;
-	
+
 	private String phoneNum;
 	private String nickName;
 	private String password;
@@ -55,7 +56,7 @@ public class UserModel extends DefaultModel {
 		this.isActive = isActive;
 	}
 
-	@ManyToMany(targetEntity = UserGroupModel.class)
+	@ManyToMany(targetEntity = UserGroupModel.class, fetch = FetchType.EAGER)
 	@Cascade({ CascadeType.SAVE_UPDATE })
 	@JoinTable(name = "rel_user_usergroup", joinColumns = @JoinColumn(name = "user", referencedColumnName = "phoneNum"), inverseJoinColumns = @JoinColumn(name = "usergroup", referencedColumnName = "groupname"))
 	public List<UserGroupModel> getUserGroups() {

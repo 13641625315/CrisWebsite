@@ -84,7 +84,6 @@
 			<version>4.2.4.RELEASE</version>
 		</dependency>
 
-
 		<!-- Hibernate -->
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
@@ -249,6 +248,7 @@
 			<artifactId>jsoup</artifactId>
 			<version>1.10.3</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.code.kaptcha/kaptcha -->
 	</dependencies>
 	<build>
 		<finalName>criswebsite</finalName>

@@ -8,5 +8,5 @@ public interface UserService {
 
 	public UserGroupModel findUserGroupByGroupName(String userGroupName);
 
-	public boolean UserRegist(String phoneNum, String nickName, String pass, String repass, String idCode) throws Exception;
+	public boolean userRegist(String phoneNum, String nickName, String pass, String repass, String idCode) throws Exception;
 }

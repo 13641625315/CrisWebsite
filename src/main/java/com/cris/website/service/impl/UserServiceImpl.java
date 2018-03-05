@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean UserRegist(String phoneNum, String nickName, String pass, String repass, String idCode)
+	public boolean userRegist(String phoneNum, String nickName, String pass, String repass, String idCode)
 			throws Exception {
 		UserGroupModel userGroup = findUserGroupByGroupName(USER_USER_GROUP_NAME);
 		if (null == userGroup) {
