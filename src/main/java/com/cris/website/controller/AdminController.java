@@ -27,27 +27,31 @@ public class AdminController {
 	@Resource
 	private Md5PasswordEncoder md5PasswordEncoder;
 
+	private String SECURITYCODE = "admin";
+
 	@RequestMapping(value = "/initialData", method = RequestMethod.GET)
-	public ModelAndView initialData(HttpServletRequest request, HttpServletResponse response, Model model)
-			throws Exception {
-		// initial UserGroupModel
-		UserGroupModel userGroup = new UserGroupModel();
-		userGroup.setGroupName("User");
-		crisAbstractDaoImpl.saveModel(userGroup);
-		UserGroupModel adminGroup = new UserGroupModel();
-		adminGroup.setGroupName("Admin");
-		crisAbstractDaoImpl.saveModel(adminGroup);
-		// initial UserModel
-		UserModel user = new UserModel();
-		user.setNickName("Admin");
-		user.setPassword(md5PasswordEncoder.encodePassword("nimda", "11111111111"));
-		user.setPhoneNum("11111111111");
-		user.setIsActive(true);
-		List<UserGroupModel> userGroups = new ArrayList<>();
-		userGroups.add(userGroup);
-		userGroups.add(adminGroup);
-		user.setUserGroups(userGroups);
-		crisAbstractDaoImpl.saveModel(user);
+	public ModelAndView initialData(HttpServletRequest request, HttpServletResponse response, Model model,
+			String securityCode) throws Exception {
+		if (SECURITYCODE.equals(securityCode)) {
+			// initial UserGroupModel
+			UserGroupModel userGroup = new UserGroupModel();
+			userGroup.setGroupName("User");
+			crisAbstractDaoImpl.saveModel(userGroup);
+			UserGroupModel adminGroup = new UserGroupModel();
+			adminGroup.setGroupName("Admin");
+			crisAbstractDaoImpl.saveModel(adminGroup);
+			// initial UserModel
+			UserModel user = new UserModel();
+			user.setNickName("Admin");
+			user.setPassword(md5PasswordEncoder.encodePassword("nimda", "11111111111"));
+			user.setPhoneNum("11111111111");
+			user.setIsActive(true);
+			List<UserGroupModel> userGroups = new ArrayList<>();
+			userGroups.add(userGroup);
+			userGroups.add(adminGroup);
+			user.setUserGroups(userGroups);
+			crisAbstractDaoImpl.saveModel(user);
+		}
 		return new ModelAndView("redirect:/indexPage");
 	}
 

@@ -58,10 +58,28 @@
 			$("#registFormIdCodeControl").addClass("has-error");
 			return false;
 		}
-		
 		return true;
 	}
 
+	function checkLoginForm(){
+		//校验PhoneNum
+		if (!isPhoneNumAvailable($("#loginFormPhoneNum").val())) {
+			$("#loginFormPhoneNumControl").addClass("has-error");
+			return false;
+		}
+		//校验Pass
+		if (!isPassAvailable($("#loginFormPass").val())) {
+			$("#loginFormPassControl").addClass("has-error");
+			return false;
+		}
+		//校验验证码
+		if ($("#loginCaptcha").val().trim() == "") {
+			$("#loginFormIdCodeControl").addClass("has-error");
+			return false;
+		}
+		return true;
+	}
+	
 	function isPhoneNumAvailable(phoneNum) {
 		if (phoneNum.trim() == "") {
 		       return false;
@@ -172,15 +190,16 @@
 					</form>
 				</div>
 				<div class="loginDiv">
-					<form class="loginForm" action="/CrisWebsite/login" method="post">
+					<form class="loginForm" action="/CrisWebsite/login" method="post"
+						onsubmit="return checkLoginForm()">
 						<div class="loginFormInner">
 							<div id="loginFormPhoneNumControl">
 								<input class="loginInput form-control" type="text"
-									name="phoneNum" placeholder="手机号">
+									id="loginFormPhoneNum" name="phoneNum" placeholder="手机号">
 							</div>
 							<div id="loginFormPassControl">
 								<input class="loginInput form-control" type="password"
-									name="pass" placeholder="密码">
+									id="loginFormPass" name="pass" placeholder="密码">
 							</div>
 							<div id="loginFormIdCodeControl">
 								<input type="text" id="loginCaptcha" name="loginCaptcha"
