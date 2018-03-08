@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,8 +21,8 @@ import com.cris.website.service.UserService;
 
 @Service("crisUserDetailsService")
 public class CrisUserDetailsService implements UserDetailsService {
-
-	private UserService userServiceImpl;
+	@Autowired
+	private UserService userService;
 
 	final Log LOG = LogFactory.getLog(getClass());
 
@@ -30,7 +31,7 @@ public class CrisUserDetailsService implements UserDetailsService {
 
 	@Transactional(readOnly = true)
 	public UserDetails loadUserByUsername(String phoneNum) throws UsernameNotFoundException {
-		UserModel user = userServiceImpl.findUserByPhoneNum(phoneNum);
+		UserModel user = userService.findUserByPhoneNum(phoneNum);
 		if (user == null) {
 			LOG.error("User not found");
 			throw new UsernameNotFoundException("findUserByPhoneNum() User not found");
@@ -52,14 +53,6 @@ public class CrisUserDetailsService implements UserDetailsService {
 			}
 		}
 		return authorities;
-	}
-
-	public UserService getUserServiceImpl() {
-		return userServiceImpl;
-	}
-
-	public void setUserServiceImpl(UserService userServiceImpl) {
-		this.userServiceImpl = userServiceImpl;
 	}
 
 }

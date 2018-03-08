@@ -2,54 +2,75 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/util
            http://www.springframework.org/schema/util/spring-util-3.0.xsd
            http://www.springframework.org/schema/context
-           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/data/jpa
+           http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
 	<!-- 载入配置文件 -->
 	<context:property-placeholder location="classpath:config-local.properties" />
 	<!-- <context:property-placeholder location="classpath:config-dev.properties" 
 		/> -->
 
+	<!-- 对包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 -->
+	<context:component-scan base-package="com.cris.website.*" />
+
+	<jpa:repositories base-package="com.cris.website.dao"
+		entity-manager-factory-ref="entityManagerFactory"
+		transaction-manager-ref="transactionManager" />
+
+	<!-- 实体管理器 -->
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="com.cris.website.model" />
+		<property name="persistenceProvider">
+			<bean class="org.hibernate.jpa.HibernatePersistenceProvider" />
+		</property>
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="generateDdl" value="false" />
+				<property name="database" value="MYSQL" />
+				<property name="databasePlatform" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+				<!-- <property name="showSql" value="true" /> -->
+			</bean>
+		</property>
+		<property name="jpaDialect">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
+		</property>
+		<property name="jpaPropertyMap">
+			<map>
+				<entry key="hibernate.query.substitutions" value="true 1, false 0" />
+				<entry key="hibernate.default_batch_fetch_size" value="16" />
+				<entry key="hibernate.max_fetch_depth" value="2" />
+				<entry key="hibernate.generate_statistics" value="true" />
+				<entry key="hibernate.bytecode.use_reflection_optimizer"
+					value="true" />
+				<entry key="hibernate.cache.use_second_level_cache" value="false" />
+				<entry key="hibernate.cache.use_query_cache" value="false" />
+			</map>
+		</property>
+	</bean>
+
 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
 
 	<bean id="soapTemplate" class="org.springframework.ws.client.core.WebServiceTemplate" />
+
+	<bean id="md5PasswordEncoder"
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder">
+	</bean>
 
 	<bean id="cusAccessObjectUtil" class="com.cris.website.util.CusAccessObjectUtil">
 		<property name="IP138_URL" value="${ip138.url}" />
 	</bean>
 
 	<bean id="heFengWeatherClient" class="com.cris.website.client.HeFengWeatherClient">
-		<property name="restTemplate" ref="restTemplate" />
 		<property name="HEFENG_WEATHER_URL" value="${hefeng.weather.url}" />
 		<property name="HEFENG_WEATHER_KEY" value="${hefeng.weather.key}" />
-	</bean>
-
-	<bean id="crisWSService" class="com.cris.website.service.impl.CrisWSServiceImpl">
-		<property name="heFengWeatherClient" ref="heFengWeatherClient" />
-	</bean>
-
-	<bean id="crisWSFacades" class="com.cris.website.facades.impl.CrisWSFacadesImpl">
-		<property name="crisWSService" ref="crisWSService" />
-	</bean>
-
-	<bean id="crisAbstractDaoImpl" class="com.cris.website.dao.impl.CrisAbstractDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-
-	<bean id="userDaoImpl" class="com.cris.website.dao.impl.UserDaoImpl"
-		parent="crisAbstractDaoImpl">
-	</bean>
-
-	<bean id="userServiceImpl" class="com.cris.website.service.impl.UserServiceImpl">
-		<property name="userDaoImpl" ref="userDaoImpl" />
-		<property name="md5PasswordEncoder" ref="md5PasswordEncoder" />
-	</bean>
-
-	<bean id="userFacadesImpl" class="com.cris.website.facades.impl.UserFacadesImpl">
-		<property name="userServiceImpl" ref="userServiceImpl" />
 	</bean>
 </beans>

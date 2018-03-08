@@ -44,27 +44,16 @@
 		class="org.springframework.security.core.session.SessionRegistryImpl">
 	</beans:bean>
 
-	<beans:bean id="md5PasswordEncoder"
-		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder">
-	</beans:bean>
-
-	<beans:bean id="crisUserDetailsService"
-		class="com.cris.website.security.CrisUserDetailsService">
-		<beans:property name="userServiceImpl" ref="userServiceImpl" />
-	</beans:bean>
-
 	<beans:bean id="loginFilter"
 		class="com.cris.website.security.LoginAuthenticationFilter">
-		<beans:property name="authenticationManager" ref="authenticationManager">
-		</beans:property>
+		<beans:property name="usernameParameter" value="phoneNum" />
+		<beans:property name="passwordParameter" value="pass" />
+		<beans:property name="authenticationManager" ref="authenticationManager" />
 		<beans:property name="authenticationSuccessHandler">
 			<beans:bean
 				class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
 				<beans:property name="defaultTargetUrl" value="/indexPage"></beans:property>
 			</beans:bean>
 		</beans:property>
-		<!-- <beans:property name="authenticationFailureHandler"> <beans:bean class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler"> 
-			<beans:property name="defaultFailureUrl" value="/login.jsp"> </beans:property> 
-			</beans:bean> </beans:property> -->
 	</beans:bean>
 </beans:beans>

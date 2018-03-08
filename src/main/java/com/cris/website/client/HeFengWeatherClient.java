@@ -3,6 +3,7 @@
  */
 package com.cris.website.client;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,9 +13,10 @@ import com.cris.website.util.JacksonHelper;
 
 @Component
 public class HeFengWeatherClient {
+	@Autowired
 	private RestTemplate restTemplate;
-	private String HEFENG_WEATHER_URL;
-	private String HEFENG_WEATHER_KEY;
+	private static String HEFENG_WEATHER_URL;
+	private static String HEFENG_WEATHER_KEY;
 
 	public HeWeather getWeatherForIP(final String ip) {
 		// String
@@ -29,14 +31,6 @@ public class HeFengWeatherClient {
 			e.printStackTrace();
 		}
 		return null;
-	}
-
-	public RestTemplate getRestTemplate() {
-		return restTemplate;
-	}
-
-	public void setRestTemplate(RestTemplate restTemplate) {
-		this.restTemplate = restTemplate;
 	}
 
 	public String getHEFENG_WEATHER_URL() {

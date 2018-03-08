@@ -21,8 +21,6 @@
 <title>${pageTitle}</title>
 </head>
 <body>
-		<div class="crisContainer">
-			<div class="headerContainer"></div>
-		</div>
+		
 </body>
 </html>

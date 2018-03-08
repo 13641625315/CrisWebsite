@@ -23,12 +23,11 @@
 	href="/CrisWebsite/css/header.css" />
 <link rel="stylesheet" type="text/css"
 	href="/CrisWebsite/css/footer.css">
-<link rel="stylesheet" type="text/css"
-	href="/CrisWebsite/css/slider.css" />
 
 <title>${pageTitle}</title>
 </head>
 <body>
-
+	<header:header />
+	<footer:footer />
 </body>
 </html>

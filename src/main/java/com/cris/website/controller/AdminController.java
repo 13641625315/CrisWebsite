@@ -3,10 +3,10 @@ package com.cris.website.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.cris.website.dao.CrisAbstractDao;
+import com.cris.website.dao.UserDao;
+import com.cris.website.dao.UserGroupDao;
 import com.cris.website.model.UserGroupModel;
 import com.cris.website.model.UserModel;
 
@@ -22,9 +23,11 @@ import com.cris.website.model.UserModel;
 @RequestMapping(value = "/Admin")
 public class AdminController {
 
-	@Resource
-	private CrisAbstractDao crisAbstractDaoImpl;
-	@Resource
+	@Autowired
+	private UserDao userDao;
+	@Autowired
+	private UserGroupDao userGroupDao;
+	@Autowired
 	private Md5PasswordEncoder md5PasswordEncoder;
 
 	private String SECURITYCODE = "admin";
@@ -36,10 +39,10 @@ public class AdminController {
 			// initial UserGroupModel
 			UserGroupModel userGroup = new UserGroupModel();
 			userGroup.setGroupName("User");
-			crisAbstractDaoImpl.saveModel(userGroup);
+			userGroupDao.save(userGroup);
 			UserGroupModel adminGroup = new UserGroupModel();
 			adminGroup.setGroupName("Admin");
-			crisAbstractDaoImpl.saveModel(adminGroup);
+			userGroupDao.save(adminGroup);
 			// initial UserModel
 			UserModel user = new UserModel();
 			user.setNickName("Admin");
@@ -50,7 +53,7 @@ public class AdminController {
 			userGroups.add(userGroup);
 			userGroups.add(adminGroup);
 			user.setUserGroups(userGroups);
-			crisAbstractDaoImpl.saveModel(user);
+			userDao.save(user);
 		}
 		return new ModelAndView("redirect:/indexPage");
 	}
