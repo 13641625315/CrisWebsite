@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cris.website.exception.JsonConverterException;
 import com.cris.website.facades.CrisWSFacades;
 import com.cris.website.jasonbean.HeWeather;
 import com.cris.website.util.CusAccessObjectUtil;
@@ -23,10 +24,15 @@ public class PageController {
 
 	@RequestMapping(value = "/indexPage", method = RequestMethod.GET)
 	public ModelAndView indexPage(HttpServletRequest request, HttpServletResponse response, Model model) {
-		HeWeather heWeather = crisWSFacades.getWeatherForIP(CusAccessObjectUtil.getPublicIP());
+		HeWeather heWeather;
+		try {
+			heWeather = crisWSFacades.getWeatherForIP(CusAccessObjectUtil.getPublicIP());
+			model.addAttribute("heWeather", heWeather);
+		} catch (JsonConverterException e) {
+			e.printStackTrace();
+		}
 		model.addAttribute("pageTitle", PAGE_TITLE_PREFIX + "首页");
 		model.addAttribute("pageID", "indexPage");
-		model.addAttribute("heWeather", heWeather);
 		return new ModelAndView("indexPage");
 	}
 

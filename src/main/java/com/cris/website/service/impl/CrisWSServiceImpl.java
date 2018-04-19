@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cris.website.client.HeFengWeatherClient;
+import com.cris.website.exception.JsonConverterException;
 import com.cris.website.jasonbean.HeWeather;
 import com.cris.website.service.CrisWSService;
 
@@ -13,7 +14,7 @@ public class CrisWSServiceImpl implements CrisWSService {
 	private HeFengWeatherClient heFengWeatherClient;
 
 	@Override
-	public HeWeather getWeatherForIP(String ip) {
+	public HeWeather getWeatherForIP(String ip) throws JsonConverterException {
 		return heFengWeatherClient.getWeatherForIP(ip);
 	}
 

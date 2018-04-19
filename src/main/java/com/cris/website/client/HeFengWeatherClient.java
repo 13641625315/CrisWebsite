@@ -18,19 +18,10 @@ public class HeFengWeatherClient {
 	private static String HEFENG_WEATHER_URL;
 	private static String HEFENG_WEATHER_KEY;
 
-	public HeWeather getWeatherForIP(final String ip) {
-		// String
-		// responseBody=restTemplate.getForObject("https://free-api.heweather.com/v5/now?city=210.13.112.211&key=a00e1da7db394e0a8f6b6c30c665482b",
-		// String.class);
-		String HEFENG_WEATHER_GET_REQUEST=HEFENG_WEATHER_URL+"?city="+ip+"&key="+HEFENG_WEATHER_KEY;
-		String responseBody = restTemplate.getForObject(HEFENG_WEATHER_GET_REQUEST,
-				String.class);
-		try {
-			return JacksonHelper.fromJSON(responseBody, HeWeather.class);
-		} catch (JsonConverterException e) {
-			e.printStackTrace();
-		}
-		return null;
+	public HeWeather getWeatherForIP(final String ip) throws JsonConverterException {
+		String HEFENG_WEATHER_GET_REQUEST = HEFENG_WEATHER_URL + "?city=" + ip + "&key=" + HEFENG_WEATHER_KEY;
+		String responseBody = restTemplate.getForObject(HEFENG_WEATHER_GET_REQUEST, String.class);
+		return JacksonHelper.fromJSON(responseBody, HeWeather.class);
 	}
 
 	public String getHEFENG_WEATHER_URL() {
